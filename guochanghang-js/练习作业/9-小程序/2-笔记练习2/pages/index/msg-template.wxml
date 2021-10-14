@@ -1,0 +1,12 @@
+<template name="msg-template">
+  <view>
+    <!-- <text>{{index}}:{{msg}}</text>
+    <text>Title:{{title}}</text> -->
+
+    <!-- <text>{{text}}</text> -->
+
+    <view class="f555">
+      FirstName: {{firstName}}, LastName: {{lastName}}
+    </view>
+  </view>
+</template>

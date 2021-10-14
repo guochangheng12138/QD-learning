@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<body>
+
+    <div>
+        <button id="paosong">点击抛送</button>
+    </div>
+    <script>
+        var paosong = document.getElementById('paosong');
+
+        var arr = [];
+        for (var i = 1; i <= 100; i++) {
+            arr.push(i)
+        }
+        console.log(arr);
+        paosong.addEventListener("click", (e) => {
+            e.preventDefault();
+            const url1 = 'http://webapi.hanmaweilai.com/api/v1/postData';
+            const url2 = 'http://webapi.hanmaweilai.com/api/v1/getData';
+            $.ajax({
+                async: false,
+                url: url1,
+                type: "POST",
+                data: { idx: arr },
+                success: function (data) {
+                    console.log(data);
+                    var brr = data.data.idx;
+                    var sum = 0;
+                    for (var n = 0; n <= brr.length - 1; n++) {
+                        sum += Number(brr[n]);
+                    }
+                    console.log(sum);
+                },
+                error: function () {
+                    console.log('error')
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

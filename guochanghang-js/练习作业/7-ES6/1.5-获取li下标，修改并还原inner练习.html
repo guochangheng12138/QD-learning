@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list" class="list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+        <li>DOM</li>
+        <li>BOOM</li>
+    </ul>
+    <script>
+        // var list = document.getElementById('list');   //涉及li标号，用lis[i]
+        var lis = document.getElementsByTagName("li");
+        for (let i = 0; i < lis.length; i++) {            //用let,每次都输出i
+            lis[i].onmouseover = function (e) {   //lis[i]是数组，事件委托
+                e.target.style.backgroundColor = 'red';
+                yuanshi = e.target.innerHTML;   //不加 var，让yuanshi变成全局变量。
+                e.target.innerHTML += ' 我是第' + (i + 1) + '个';
+                // console.log(i);
+                // console.log(yuanshi);
+            }
+            lis[i].onmouseout = function (e) {
+                e.target.style.backgroundColor = 'white'
+                e.target.innerHTML = yuanshi;     //还原inner
+            }
+        }
+    </script>
+
+</body>
+
+</html>

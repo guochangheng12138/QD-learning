@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .content {
+            display: flex;
+            flex-direction: row;
+            height: 400px;
+            background-color: cyan;
+            flex-wrap: nowrap;
+        }
+
+        .txt {
+            font-size: 14px;
+            width: 200px;
+            height: 200px;
+        }
+
+        .green {
+            background-color: green;
+            flex-basis: 500px;
+        }
+
+        .red {
+            background-color: red;
+
+        }
+
+        .orange {
+            background-color: orange;
+        }
+    </style>
+
+    <div class="content">
+        <div class="txt green">A</div>
+        <div class="txt red">B</div>
+        <div class="txt orange">C</div>
+        <div class="txt orange">A</div>
+        <div class="txt green">B</div>
+        <div class="txt red">C</div>
+    </div>
+</body>
+
+</html>

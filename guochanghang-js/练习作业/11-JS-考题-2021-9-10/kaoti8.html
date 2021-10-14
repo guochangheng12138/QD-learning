@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <select id="province" name="province">
+            <option value="">---请选择省---</option>
+            <option value="beijing">北京</option>
+            <option value="shandong">山东</option>
+            <option value="shanxi">山西</option>
+            <option value="fujian">福建</option>
+        </select>
+    </div>
+    <div>
+        <select id="city" name="city">
+            <option value="">---请选择城市---</option>
+        </select>
+    </div>
+    <div>
+        <select id="xian" name="xian">
+            <option value="">---请选择县---</option>
+        </select>
+    </div>
+
+    <script>
+        var data = [
+            {
+                pro: "beijing",
+                city: ["东城区", "朝阳区", "大兴区", "通州区"]
+            },
+            {
+                pro: "shandong",
+                city: ["菏泽", "济南", "聊城", "东营"]
+            },
+            {
+                pro: "shanxi",
+                city: ["太原", "晋中", "长治", "大同"]
+            },
+            {
+                pro: "fujian",
+                city: ["莆田", "三明", "厦门", "福州"]
+            },
+        ];
+        var data1 = [
+            {
+                city: "菏泽",
+                xian: ["鄄城", "东明", "牡丹区", "曹县", "成武"]
+            },
+            {
+                city: "济南",
+                xian: ["市中区", "历城区", "天桥区", "高新区"]
+            },
+        ]
+
+        var province = document.getElementById("province");
+        var citys = document.getElementById("city");
+        var xians = document.getElementById("xian");
+
+
+
+        province.oninput = function () {
+            console.log(province.value)
+            // var str = province.value;
+
+            citys.options.length = 0;
+
+            for (let i = 0; i < data.length; i++) {
+                if (province.value === data[i].pro) {
+                    console.log(i);
+
+                    for (let index = 0; index < data[i].city.length; index++) {
+                        var option = new Option();
+                        option.text = data[i].city[index];
+                        option.value = data[i].city[index];
+                        citys.options.add(option);
+                    }
+                }
+
+            }
+        },
+            citys.oninput = function () {
+                console.log(citys.value)
+                // var str1 = citys.value;
+                xians.options.length = 0;
+                for (let i = 0; i < data1.length; i++) {
+                    if (citys.value === data1[i].city) {
+                        console.log(i);
+                        for (let index = 0; index < data1[i].xian.length; index++) {
+                            var option = new Option();
+                            option.text = data1[i].xian[index];
+                            option.value = data1[i].xian[index];
+                            xians.options.add(option);
+                        }
+                    }
+                }
+            }
+    </script>
+</body>
+
+</html>

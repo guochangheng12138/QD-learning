@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .box {
+            width: 1000px;
+            height: 130px;
+            border: solid 5px red;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+
+        .pic {
+            width: 200px;
+            height: 130px;
+        }
+
+        .box ul {
+            list-style: none;
+            width: 5000px;
+            position: relative;
+        }
+
+        .box ul li {
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+
+    <div id="box" class="box">
+        <ul id="list">
+            <li><img src="img/2.jpg" class="pic" alt=""></li>
+            <li><img src="img/3.jpg" class="pic" alt=""></li>
+            <li><img src="img/4.jpg" class="pic" alt=""></li>
+            <li><img src="img/5.jpg" class="pic" alt=""></li>
+            <li><img src="img/6.jpg" class="pic" alt=""></li>
+            <li><img src="img/7.jpg" class="pic" alt=""></li>
+        </ul>
+    </div>
+
+    <script>
+        var box = document.getElementById("box");
+        var list = document.getElementById("list");
+        list.innerHTML += list.innerHTML;
+        var left = 0;
+        var timer;
+        function fun() {
+            clearInterval(timer);
+            timer = setInterval(
+                function () {
+                    left -= 4;
+                    list.style.left = left + "px";
+                    if (left <= -1260) {
+                        left = 0;
+                    }
+                }, 20)
+        }
+        fun();
+        box.onmouseenter = function () {
+            clearInterval(timer);
+        }
+        box.onmouseleave = function () {
+            fun();
+        }
+    </script>
+</body>
+
+</html>

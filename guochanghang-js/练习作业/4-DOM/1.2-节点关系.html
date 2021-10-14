@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <p>我是段落A</p>
+        <p id="para">我是段落B</p>
+        <p>我是段落C</p>
+    </div>
+    <script>
+        var box = document.getElementById('box');
+        var para = document.getElementById('para');
+        console.log(box.childNodes);
+        console.log(box.firstChild);
+        console.log(box.firstElementChild);
+        console.log(box.lastChild);
+        console.log(box.lastElementChild);
+        console.log(para.previousElementSibling);
+        console.log(para.previousSibling);
+        console.log(para.nextElementSibling);
+        console.log(para.nextSibling);
+
+
+        function zxd(node) {
+            var o = node;
+            while (o.previousSibling != null) {
+                if (o.previousSibling.nodeType == 1) {
+                    return o.previousSibling;
+                }
+                o = o.previousSibling;
+            }
+            return null;
+        }
+        console.log(zxd(para));
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

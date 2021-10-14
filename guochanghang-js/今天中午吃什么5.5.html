@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=0.38, user-scalable=no, maxinum-scale=1, mininum-scale=1">
+    <title>Document</title>
+</head>
+
+<style>
+    html {
+        background-color: white;
+    }
+
+    body {
+        margin: 0 auto;
+        width: 1150px;
+        /* border: solid; */
+        position: relative;
+        /* overflow: hidden; */
+    }
+
+    #zuo {
+        float: left;
+    }
+
+    #you {
+        float: left;
+    }
+
+    h1 {
+        font-size: 100px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        display: block;
+    }
+
+    #jieguo {
+        width: 750px;
+        height: 200px;
+        border: solid 3px red;
+        margin-bottom: 50px;
+    }
+
+    #jieguo {
+        font-size: 100px;
+        text-align: center;
+        line-height: 180px;
+        color: red;
+    }
+
+    #jieguo1 {
+        margin-left: 140px;
+        position: relative;
+    }
+
+    #btn1 {
+        width: 200px;
+        height: 100px;
+        font-size: 50px;
+        cursor: pointer;
+        position: absolute;
+    }
+
+    #btn2 {
+        width: 200px;
+        height: 100px;
+        font-size: 50px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        margin-left: 50px;
+        position: absolute;
+        left: 200px;
+    }
+
+    #btn3 {
+        width: 450px;
+        height: 100px;
+        font-size: 50px;
+        cursor: pointer;
+        position: absolute;
+        top: 120px;
+    }
+
+    #btn4 {
+        width: 450px;
+        height: 100px;
+        font-size: 50px;
+        cursor: pointer;
+        position: absolute;
+        top: 240px;
+    }
+
+    #bt {
+        margin-top: 200px;
+        margin-left: 20px;
+        font-size: 40px;
+        color: rgb(17, 13, 223);
+    }
+
+    #jgj {
+        margin-top: 20px;
+        margin-left: 20px;
+        font-size: 50px;
+        border: solid green;
+        width: 350px;
+        height: 500px;
+    }
+</style>
+
+<body>
+
+    <div>
+        <div id="zuo">
+            <h1>今天中午吃什么?</h1>
+            <div id="jieguo">请点击开始</div>
+            <form id="jieguo1" action="">
+                <input type="button" value="开始" id="btn1">
+                <input type="button" value="停！" id="btn2"><br>
+                <input type="button" value="这周吃过了，去掉。" id="btn3">
+                <input type="button" value="先去掉太贵的。" id="btn4">
+            </form>
+        </div>
+        <div id="you">
+            <div id="bt">防作弊结果展示：</div>
+            <div id="jgj"></div>
+        </div>
+    </div>
+
+    <script>
+        var arr = new Array('杨国府麻辣烫', '大盘鸡', '鸡公煲', '超意兴', '便利店', '过桥米线', '兰州拉面', '张姐烤肉拌饭', '牛肉汤', '徐志馍');
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+        var btn3 = document.getElementById('btn3');
+        var btn4 = document.getElementById('btn4');
+        var jgj = document.getElementById('jgj');
+        var jieguo = document.getElementById('jieguo');
+
+        var st;
+        var lt = arr.length;
+        function xunhuan() {
+            st = parseInt(Math.random() * lt);
+            jieguo.innerHTML = arr[st];
+        }
+        var timer;
+        btn1.onclick = function () {
+            clearInterval(timer);
+            timer = setInterval(xunhuan, 10);
+        }
+        var brr = [];
+        btn2.onclick = function () {
+            clearInterval(timer);
+            console.log(arr);
+            btn1.style.display = 'none';
+            brr.push(arr[st]);
+            jgj.innerHTML = brr;
+        }
+        btn3.onclick = function () {
+            arr.splice(st, 1);
+            lt--;
+            jieguo.innerHTML = '';
+            btn1.style.display = 'block';
+        }
+        btn4.onclick = function () {
+            arr.splice(0, 3);
+            lt -= 3;
+            jieguo.innerHTML = '已去除';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 展开
+        const app = {
+            color: 'red',
+            shape: 'qiu',
+            taste: 'tian'
+        };
+        console.log({ ...app });
+        console.log({ ...app } === app);   //新对象
+
+
+        // 合并
+        const pen = {
+            color: 'black',
+            shape: 'yuan',
+            use: 'xie'
+        }
+        console.log({ ...app, ...pen });
+        console.log({ ...pen, app });
+
+
+        // 非对象展开
+        console.log({ ...{} });
+        console.log({ ...{}, a: 1 });
+
+
+        console.log({ ...1 });
+        console.log(new Object(1));
+        console.log({ ...undefined });
+        console.log({ ...null });
+        console.log({ ...true });
+
+
+
+        console.log({ ...'alex' });
+        console.log([...'alex']);
+        console.log(...'alex');
+
+
+        // 不会展开对象中的对象属性
+        const org = {
+            feature: {
+                taste: 'tian'
+            }
+        }
+        console.log({ ...org });
+
+
+        // 复制对象
+        const a = { x: 1, y: 2 };
+        const c = { ...a };
+        console.log(c, c === a);
+
+        // 创建对象
+        // const loguser = ({
+        //     age = 10,
+        //     sex = 'male'
+        // } = {}) => {
+        //     console.log(age, sex)
+        // }
+        // loguser();
+
+
+        // 方法内创建默认值
+        const loguser = userparam => {
+            const defparam = {
+                name: 'zhangsan',
+                age: 0,
+                sex: 'male'
+            };
+            const param = { ...defparam, ...userparam };
+            console.log(param);
+            console.log(param.name);
+            const { name, age, sex } = { ...defparam, ...userparam }
+            console.log(name, age, sex)
+        }
+        loguser({ name: 'lisi', age: 1, sex: 'male' })
+        loguser()
+    </script>
+</body>
+
+</html>

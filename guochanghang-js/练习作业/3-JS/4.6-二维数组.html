@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var arr = [
+        //     ['zhangsan', 18],
+        //     ['lisi', 19],
+        //     ['wangwu', 20]
+        // ];
+        // console.log(arr);
+
+        // for (let n = 0; n < arr.length; n++) {
+        //     for (let m = 0; m < arr[n].length; m++) {
+        //         console.log(arr[n][m]);
+        //     }
+        // }
+
+        // var arr = [
+        //     ['小马', '男', 18],
+        //     ['小欧', '女', 19],
+        //     ['小课', '男', 18],
+        //     ['小时', '女', 17],
+        //     ['小马', '女', 16],
+        // ];
+        // var brr = [];
+        // for (var n = 0; n < arr.length; n++) {
+        //     if (arr[n][1] == '女') {
+        //         brr.push(arr[n]);
+        //     }
+        // }
+        // console.log(brr);
+
+
+
+        var arr = [
+            ['汉', '码', '未', '来'],
+            ['程', '序', '员'],
+            ['梦', '工', '厂']
+        ];
+
+        var brr = [];
+        arr[0].splice(4, 0, ',');
+        arr[1].splice(3, 0, '的');
+        arr[2].splice(3, 0, '。');
+
+        for (i = 0; i < arr.length; i++) {
+            for (n = 0; n < arr[i].length; n++) {
+                brr.push(arr[i][n]);
+            }
+        }
+        console.log(brr);
+        var crr = brr.join('');
+        console.log(crr);
+    </script>
+</body>
+
+</html>

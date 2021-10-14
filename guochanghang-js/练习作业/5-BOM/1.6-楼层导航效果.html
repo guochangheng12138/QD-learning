@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content-part {
+            width: 1000px;
+            margin: 0px auto;
+            margin-bottom: 30px;
+            background-color: #ccc;
+            font-size: 50px;
+        }
+
+        .floornav {
+            position: fixed;
+            right: 40px;
+            top: 50%;
+            margin-top: -100px;
+            width: 120px;
+            height: 200px;
+            background-color: orange;
+        }
+
+        .floornav ul {
+            list-style: none;
+        }
+
+        .floornav ul li {
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        .floornav ul li.current {
+            background: purple;
+            color: white;
+        }
+    </style>
+    <nav class="floornav">
+        <ul id="list">
+            <li data-n="科技" class="current">科技</li>
+            <li data-n="体育">体育</li>
+            <li data-n="新闻">新闻</li>
+            <li data-n="娱乐">娱乐</li>
+            <li data-n="视频">视频</li>
+        </ul>
+    </nav>
+
+    <section class="content-part" style='height:674px' data-n="科技">科技栏目</section>
+    <section class="content-part" style='height:567px' data-n="体育">体育栏目</section>
+    <section class="content-part" style='height:739px' data-n="新闻">新闻栏目</section>
+    <section class="content-part" style='height:574px' data-n="娱乐">娱乐栏目</section>
+    <section class="content-part" style='height:1294px' data-n="视频">视频栏目</section>
+
+    <script>
+        var list = document.getElementById('list');
+        var contentParts = document.querySelectorAll('.content-part');
+        var lis = document.querySelectorAll('#list li');
+        list.onclick = function (e) {
+            if (e.target.tagName.toLowerCase() == 'li') {
+                // 得到点击项的值并赋予变量n
+                var n = e.target.getAttribute('data-n');
+                // 找到栏目中属性值与点击项相同的栏目
+                var contentPart = document.querySelector('.content-part[data-n=' + n + ']');
+                // 让页面卷动值等于栏目到浏览器顶部距离
+                document.documentElement.scrollTop = contentPart.offsetTop;
+            }
+            console.log(n);
+        }
+        // 得到各栏目到浏览器顶部距离的数组
+        var offsetTopArr = [];
+        for (var i = 0; i < contentParts.length; i++) {
+            offsetTopArr.push(contentParts[i].offsetTop);
+        }
+        // 数组中补充一项无穷
+        offsetTopArr.push(Infinity);
+        console.log(offsetTopArr);
+
+
+        // window.nowfloor = -1;
+        window.onscroll = function () {
+            // 得到窗口卷动值
+            var scrollTop = document.documentElement.scrollTop;
+            // 得到目前所处楼层i并跳出
+            for (var i = 0; i < offsetTopArr.length; i++) {
+                if (scrollTop >= offsetTopArr[i] && scrollTop < offsetTopArr[i + 1]) {
+                    break;
+                }
+            }
+            // if (nowfloor != i) {
+            //     console.log(i);
+            //     nowfloor = i;
+
+            // 遍历设置不同导航条属性
+            for (var j = 0; j < lis.length; j++) {
+                if (j == i) {
+                    lis[j].className = 'current';
+                }
+                else {
+                    lis[j].className = '';
+                }
+            }
+            // }
+        };
+    </script>
+</body>
+
+</html>

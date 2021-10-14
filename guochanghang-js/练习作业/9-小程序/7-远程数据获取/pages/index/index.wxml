@@ -1,0 +1,9 @@
+<view class="project">
+  <view class="project-title" hidden="{{false}}">实战推荐</view>
+  <view hidden="{{!searchList&&searchList==0}}">
+    无搜索结果
+  </view>
+  <view wx:for="{{searchList?searchList:courses}}" wx:key="*this">
+  
+  </view>
+</view>

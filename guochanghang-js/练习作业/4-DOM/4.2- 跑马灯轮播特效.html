@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .carousel {
+            width: 650px;
+            height: 360px;
+            border: solid 1px red;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel ul {
+            list-style: none;
+            width: 6000px;
+            position: relative;
+            left: 0px;
+            transition: left 0.5s ease 0s;
+        }
+
+        .carousel ul li {
+            float: left;
+        }
+
+        .carousel ul li img {
+            width: 650px;
+            height: 360px;
+        }
+
+        .carousel .leftbtn {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            margin-top: -25px;
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            border-radius: 50%;
+        }
+
+        .carousel .rightbtn {
+            position: absolute;
+            left: 580px;
+            top: 50%;
+            margin-top: -25px;
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            border-radius: 50%;
+        }
+    </style>
+
+    <div class="carousel">
+        <ul id="list">
+            <li><img src="img/机酒配图02.png" alt=""></li>
+            <li><img src="img/机酒配图03.png" alt=""></li>
+            <li><img src="img/机酒配图04.png" alt=""></li>
+            <li><img src="img/机酒配图05.png" alt=""></li>
+            <li><img src="img/机酒配图06.png" alt=""></li>
+        </ul>
+        <a href="javascript:;" class="leftbtn" id="leftbtn"></a>
+        <a href="javascript:;" class="rightbtn" id="rightbtn"></a>
+    </div>
+
+    <script>
+        var leftbtn = document.getElementById('leftbtn');
+        var rightbtn = document.getElementById('rightbtn');
+        var list = document.getElementById('list');
+        // 复制第一张
+        var cloneli = list.firstElementChild.cloneNode(true);
+        list.appendChild(cloneli);
+
+
+        // ul从0开始计数
+        var idx = 0;
+        // 节流锁
+        var lock = true;
+        // 右按钮
+        rightbtn.onclick = function () {
+            if (!lock) {
+                return
+            };
+            list.style.transition = 'left 0.5s ease 0s';
+            idx++;
+            if (idx > 4) {
+                setTimeout(function () {
+                    list.style.transition = 'none';
+                    list.style.left = '0px';
+                    idx = 0;
+                }, 500);
+            }
+            list.style.left = -idx * 650 + 'px';
+            lock = false;
+            setTimeout(function () {
+                lock = true;
+            }, 500);
+        }
+
+        // 左按钮
+        leftbtn.onclick = function () {
+            if (!lock) {
+                return;
+            }
+            if (idx == 0) {
+                list.style.transition = 'none';
+                list.style.left = -5 * 650 + 'px';
+                setTimeout(function () {
+                    list.style.transition = 'left 0.5s ease 0s'
+                    idx = 4;
+                    list.style.left = -idx * 650 + 'px';
+                }, 0);
+            }
+            else {
+                idx--;
+                list.style.left = -idx * 650 + 'px';
+            }
+            lock = false;
+            setTimeout(function () {
+                lock = true;
+            }, 500);
+        }
+
+
+    </script>
+</body>
+
+</html>

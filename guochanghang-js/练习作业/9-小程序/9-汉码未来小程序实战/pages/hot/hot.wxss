@@ -1,0 +1,91 @@
+/* pages/hot/hot.wxss */
+.tabs {
+  margin-top: 30rpx;
+  padding-left: 200rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: solid 1rpx rgb(134, 129, 129);
+}
+
+.tab {
+  margin-right: 50rpx;
+  margin-bottom: 20rpx;
+}
+
+/* 选中文字 */
+.active {
+  font-weight: bold;
+}
+
+/* 红条 */
+.active-bar {
+  width: 150rpx;
+  height: 15rpx;
+  border-radius: 20rpx;
+  background-color: red;
+}
+
+/* //////////////////////////////////// */
+.time {
+  display: flex;
+  flex-direction: row;
+  width: 300rpx;
+  margin-left: 220rpx;
+  margin-top: 20rpx;
+  margin-bottom: 50rpx;
+  padding-top: 8rpx;
+  padding-bottom: 8rpx;
+  border: solid 1rpx rgb(134, 129, 129);
+  border-radius: 20rpx;
+}
+
+.period {
+  margin-left: 20rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  border-radius: 20rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: solid 5rpx rgb(134, 129, 129);
+}
+
+/* 选中阴影 */
+.period-active {
+  background-color: rgb(116, 109, 109);
+}
+/* /////////////////////////// */
+.item {
+  overflow: hidden;
+  width: 700rpx;
+  height: 150rpx;
+  margin-bottom: 50rpx;
+  margin-left: 15rpx;
+}
+
+.item-image {
+  float: left;
+  width: 200rpx;
+  height: 150rpx;
+  border-radius: 15rpx;
+}
+
+.item.title {
+  float: left;
+  width: 370rpx;
+  line-height: 140rpx;
+  padding-left: 30rpx;
+}
+
+.item-number {
+  float: left;
+  line-height: 170rpx;
+  margin-left: 10rpx;
+}
+
+.item-number image {
+  width: 60rpx;
+  height: 60rpx;
+}
+.item-number-common{
+  margin-left: 20rpx;
+}

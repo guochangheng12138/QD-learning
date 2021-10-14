@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sum(a, b) {
+            return a + b;
+        }
+        console.log(sum.prototype);
+        console.log(typeof sum.prototype);
+        console.log(sum.prototype.constructor === sum);
+
+
+        function People(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        var xiaoming = new People('小明', 12, '男');
+        console.log(xiaoming.__proto__ === People.prototype);
+
+        People.prototype.nation = "中国";
+        console.log(xiaoming.nation)
+
+
+        var tom = new People('小明', 18, '男');
+        tom.nation = '美国';
+        console.log(tom.nation);
+
+
+        console.log(xiaoming.hasOwnProperty('name'));
+        console.log('name' in xiaoming);
+
+
+
+        People.prototype.growup = function () {
+            this.age++;
+        }
+        xiaoming.growup()
+        console.log(xiaoming.age);
+
+    </script>
+</body>
+
+</html>

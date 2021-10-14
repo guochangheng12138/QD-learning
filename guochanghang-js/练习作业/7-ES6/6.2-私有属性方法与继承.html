@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(name) {
+                this._name = name;
+            }
+            speak() {
+                console.log('hhhh');
+            }
+            getname() {
+                return this._name;
+            }
+        }
+        const p = new Person('zhngsn');
+        p.name = 'zd';
+        console.log(p.getname());
+        console.log(p._name);
+        console.log(p.name);
+
+        class Person1 {
+            constructor(name) {
+                this.$name = name;
+            }
+            speak() {
+                console.log('hhhh');
+            }
+            getname() {
+                return this.$name;
+            }
+        }
+        const p1 = new Person1('llll');
+        p1.name = 'zd';
+        console.log(p1.getname());
+        console.log(p1.$name);
+        console.log(p1.name);
+
+
+
+        // 子类继承父类属性方法  同名会覆盖父类
+        class Person2 {
+            constructor(name, sex) {
+                this.name = name;
+                this.sex = sex;
+                this.say = function () {
+                    console.log('say');
+                }
+            }
+            speak() {
+                console.log('speak');
+
+            }
+            static speak() {
+                console.log('stac speak');
+            }
+        }
+        Person2.version = '1.0';
+
+        class Pro extends Person2 {
+            constructor(name, sex) {
+                super(name, sex);
+            }
+        }
+        const zs = new Pro('zhangsan', '男');
+
+
+        console.log(zs.name);
+        console.log(zs.sex);
+        zs.say();
+        zs.speak();
+        Pro.speak();
+        console.log(Pro.version);
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 只能输入小写与数字 -->
+
+    <!-- <p>
+        <input type="text" id="field">
+    </p>
+    <script>
+        var ofield = document.getElementById('field');
+        ofield.onkeypress = function (e) {
+            console.log(e.chartCode);
+            if (!(e.chartCode >= 48 && e.chartCode <= 57 || e.chartCode >= 97 && e.chartCode <= 122)) {
+                e.preventDefault();
+            }
+        }
+    </script> -->
+
+
+    <!-- 鼠标滚动 -->
+    <!-- <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: #333;
+        }
+
+        body {
+            height: 2000px;
+        }
+    </style>
+    <div id="box"></div>
+    <h1 id="info">0</h1>
+    <script>
+        var obox = document.getElementById('box');
+        var oinfo = document.getElementById('info');
+        var a = 0;
+        obox.onmousewheel = function (e) {
+            e.preventDefault();
+            if (e.deltaY > 0) {
+                a++;
+            }
+            else {
+                a--;
+            }
+            oinfo.innerText = a;
+        }
+    </script> -->
+
+
+
+
+
+
+    <!-- 阻止传播1-->
+    <!-- <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: 333;
+        }
+    </style>
+    <div id="box">
+        <input type="button" value="按我" id="btn">
+    </div>
+    <script>
+        var obtn = document.getElementById('btn');
+        var obox = document.getElementById('box');
+        obox.onclick = function () {
+            console.log('我是盒子');
+        };
+        obtn.onclick = function (e) {
+            e.stopPropagation();
+            console.log('我是按钮');
+        };
+    </script> -->
+
+
+
+
+
+    <!-- 阻止传播2 -->
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #333;
+        }
+    </style>
+    <div id="box">
+        <button id="btn">按我</button>
+    </div>
+    <script>
+        var obox = document.getElementById('box');
+        var obtn = document.getElementById('btn');
+
+        // 捕获
+        // obox.addEventListener('mouseover', function (e) {
+        //     e.stopPropagation();
+        //     console.log('我是盒子');
+        // }, true);
+        // obtn.addEventListener('mouseover', function (e) {
+        //     console.log('我是按钮');
+        // }, true)
+
+        // 冒泡
+        obox.addEventListener('click', function (e) {
+            console.log('我是盒子');
+        }, false);
+        obtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            console.log('我是按钮');
+        }, false)
+
+        // 捕获
+        // obtn.addEventListener('click', function (e) {
+        //     e.stopPropagation();
+        //     console.log('我是按钮');
+        // }, true);
+        // obox.addEventListener('click', function (e) {
+        //     console.log('我是盒子');
+        // }, true)
+    </script>
+
+
+
+
+    <!-- 弹出层 -->
+    <!-- <style>
+        .modal {
+            width: 400px;
+            height: 140px;
+            background-color: #333;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -70px;
+            margin-left: -200px;
+            display: none;
+        }
+    </style>
+    <button id='btn'>按我弹出</button>
+    <div class="modal" id="modal"></div>
+    <script>
+        var obtn = document.getElementById('btn');
+        var omodal = document.getElementById('modal');
+        obtn.onclick = function (e) {
+            e.stopPropagation();
+            omodal.style.display = 'block'
+        };
+        document.onclick = function () {
+            omodal.style.display = 'none';
+        };
+        omodal.onclick = function (e) {
+            e.stopPropagation();
+        }
+
+    </script> -->
+
+</body>
+
+</html>

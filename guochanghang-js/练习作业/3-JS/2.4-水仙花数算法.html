@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 水仙花数方法一
+        // var c = Number(prompt("请输入数字"));
+        // var d = Math.floor(c / 100);
+        // var f = (Math.floor(c / 10)) % 10;
+        // var g = c % 10;
+        // if (isNaN(c) == true) {
+        //     alert('请不要输入数字以外的字符')
+        // }
+        // else {
+        //     if (c < 100 || c > 999) {
+        //         alert("请输入3位数")
+        //     }
+        //     else {
+        //         if (Math.pow(d, 3) + Math.pow(f, 3) + Math.pow(g, 3) == c) {
+        //             alert("该数字为水仙花数")
+        //         }
+        //         else {
+        //             alert("该数字不为水仙花数")
+        //         }
+        //     }
+        // }
+        // 水仙花数方法二
+        var c = String(prompt("请输入数字"));
+        var d = Number(c.substr(0, 1));
+        var f = Number(c.substr(1, 1));
+        var g = Number(c.substr(2, 1));
+        if (isNaN(c) == true) {
+            alert('请不要输入数字以外的字符')
+        }
+        else {
+            if (c < 100 || c > 999) {
+                alert("请输入3位数")
+            }
+            else {
+                if (Math.pow(d, 3) + Math.pow(f, 3) + Math.pow(g, 3) == c) {
+                    alert("该数字为水仙花数")
+                }
+                else {
+                    alert("该数字不为水仙花数")
+                }
+            }
+        }
+
+    </script>
+
+
+    <!-- 游乐园门票 -->
+    //
+    <script>
+    //     var a = Number(prompt('请输入年龄'));
+    //     var b = Number(prompt('请输入星期'));
+    //     if (a >= 10) {
+    //         if (b == 0 || b == 6) {
+    //             alert('票价500')
+    //         }
+    //         else {
+    //             alert('票价300')
+    //         }
+    //     }
+    //     else if (b == 0 || b == 6) {
+    //         alert('票价210')
+    //     }
+    //     else (
+    //         alert('票价140')
+    //     )
+    // </script>
+</body>
+
+</html>

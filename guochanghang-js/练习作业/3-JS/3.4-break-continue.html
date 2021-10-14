@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // for (i = 0; i < 10; i++) {
+        //     console.log(i);
+        //     if (i == 4) {
+        //         break;
+        //     }
+        // }
+
+        // var n = 1;
+        // while (true) {
+        //     if (n * n > 456789) {
+        //         console.log(n);
+        //         break;
+        //     }
+        //     n++;
+        // }
+
+
+        // for (var i = 0; i < 5; i++) {
+        //     if (i == 3) {
+        //         continue
+        //     }
+        //     console.log(i);
+        // }
+
+
+        // 两次输入密码
+        // var pwd = prompt('请输入密码');
+        // while (pwd != 123456) {
+        //     pwd = prompt('请输入密码');
+        // }
+        // while (pwd = 123456) {
+        //     pwag = prompt('再次输入密码');
+        //     if (pwag == pwd) {
+        //         alert('密码一致')
+        //         break;
+        //     }
+        // }
+
+
+
+        // 100内偶数除22，44，66，88相加
+        var sum = 0;
+        for (i = 0; i <= 100; i++) {
+            if (i % 2 == 0) {
+                if (i == 22 || i == 44 || i == 66 || i == 88) {
+                    continue;
+                }
+                console.log(i);
+                document.write(i + '<br />');
+                sum += i;
+            }
+        }
+        console.log(sum);
+        document.write(sum)
+
+    </script>
+</body>
+
+</html>

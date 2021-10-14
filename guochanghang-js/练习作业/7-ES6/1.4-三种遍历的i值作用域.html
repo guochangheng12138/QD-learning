@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            padding: 50px 0 0 150px;
+        }
+
+        .btn {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            font-size: 80px;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <button class="btn">0</button>
+    <button class="btn">1</button>
+    <button class="btn">2</button>
+
+
+    <script>
+        var btns = document.querySelectorAll('.btn')
+
+        // 用var
+        // for (var i = 0; i < btns.length; i++) {
+        //     btns[i].onclick = function () {
+        //         console.log(i);
+        //     }
+        // }
+
+
+
+
+        // 用iife
+        for (var i = 0; i < btns.length; i++) {
+            (function (index) {
+                btns[index].onclick = function () {
+                    console.log(index);
+                }
+            }(i)
+            )
+        }
+
+
+
+
+        // 用let
+        // for (let i = 0; i < btns.length; i++) {
+        //     btns[i].onclick = function () {
+        //         console.log(i);
+        //     }
+        // }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

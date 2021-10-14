@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <button id='but'>你猜</button>
+    <script>
+        var but = document.getElementById('but');
+        but.onclick = function () {
+            but.style.backgroundColor = 'red'
+        }
+        but.onmousemove = function () {
+            but.style.backgroundColor = 'green'
+        }
+    </script> -->
+
+
+
+    <!-- <form action="">
+        <textarea name="" id="text" cols="50" rows="7"></textarea>
+        <p id="pcd">字数限制30字内，<span id="cg">您还可以输入<b id="bt">30</b>字</span> </p>
+    </form>
+    <script>
+        var text = document.getElementById('text');
+        var pcd = document.getElementById('pcd');
+        var bt = document.getElementById('bt');
+        var cg = document.getElementById('cg');
+        text.onkeyup = function () {
+            var leg = text.value.length;
+            if (leg <= 30) {
+                bt.innerHTML = 30 - leg;
+            }
+            else {
+                var leg2 = leg - 30;
+                cg.innerHTML = '您已超过' + parseInt(leg2) + '字';
+            }
+        }
+    </script> -->
+
+
+
+
+    <!-- <style>
+    #f1 {
+        border: black solid 8px;
+    }
+</style>
+<form action="">
+    <input type="text" id="f1"><span id="f2"></span>
+</form>
+<script>
+    var f1 = document.getElementById('f1');
+    var f2 = document.getElementById('f2');
+    f1.onfocus = function () {
+        var length = f1.value.length;
+        if (length == 0) {
+            f1.style.backgroundColor = 'white';
+            f2.innerHTML = '请输入姓名';
+        }
+    }
+    f1.onblur = function () {
+        var length = f1.value.length;
+        if (length == 0) {
+            f2.innerHTML = '姓名不能为空';
+            f1.style.backgroundColor = 'red';
+            f1.style.border = "red solid 8px";
+        }
+        else {
+            f2.innerHTML = '';
+        }
+    }
+</script> -->
+
+
+
+
+
+
+    <!-- ?????????????????????????????????????????????????????????????? -->
+    <style>
+        #div2 {
+            width: 300px;
+            height: 300px;
+            border: 2px solid gray;
+            /* background-color: red; */
+        }
+    </style>
+
+    <form action="">
+        <div>
+            <span>请选择颜色</span>
+            <select name="" id="color">
+                <option value="0">请选择</option>
+                <option value="yellow">黄色</option>
+                <option value="orange">橘色</option>
+                <option value="pink">粉色</option>
+                <option value="purple">紫色</option>
+            </select>
+        </div>
+    </form>
+    <div id="div2"></div>
+
+    <script>
+        var div2 = document.getElementById('div2');
+        var color = document.getElementById('color');
+
+        color.onchange = function () {
+            if (color.value == 0) {
+                div2.innerText = '我没有发生任何变化';
+                div2.style.backgroundColor = '#fff';
+            }
+
+            // 方法一
+            else if (color.value == 'yellow') {
+                div2.innerText = '我的背景颜色变成了yellow';
+                div2.style.backgroundColor = 'yellow';
+            }
+            else if (color.value == 'orange') {
+                div2.innerText = '我的背景颜色变成了orange';
+                div2.style.backgroundColor = 'orange';
+            }
+            else if (color.value == 'pink') {
+                div2.innerText = '我的背景颜色变成了pink';
+                div2.style.backgroundColor = 'pink';
+            }
+            else if (color.value == 'purple') {
+                div2.innerText = '我的背景颜色变成了purple';
+                div2.style.backgroundColor = 'purple';
+            }
+
+            // 方法二
+            else {
+                div2.innerHTML = '我的背景颜色变成了' + color.value + '色';
+                div2.style.backgroundColor = color.value;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

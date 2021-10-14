@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function fun() {
+        //     console.log('你好');
+        // }
+        // fun();
+
+
+        // var hanshu = function () {
+        //     console.log('meilijian');
+        // }
+        // hanshu();
+
+        // function tanchu() {
+        //     console.log('a');
+        //     console.log('b');
+        // }
+        // tanchu();
+
+        // f2();
+        // function f2() {
+        //     alert('555')
+        // }
+
+        // function a() {
+        //     document.write('你好');
+        // }
+        // var b = function () {
+        //     document.write('汉码');
+        // }
+        // a()
+        // b()
+
+        // function add(a, b) {
+        //     var sum = a + b;
+        //     console.log(sum);
+        // }
+        // add(5, 3);
+
+        // function bdd() {
+        //     var sum = 0;
+        //     for (var i = 0; i < arguments.length; i++) {
+        //         sum += arguments[i];
+        //     }
+        //     console.log(sum);
+        // }
+        // bdd(5, 3, 2)
+
+
+        // function xc(a, b) {
+        //     var res = a * b;
+        //     console.log(a + '*' + b + '=' + res);
+        // }
+        // xc(3, 4);
+        // xc(5, 6);
+        // xc(7, 7);
+
+
+
+        // 密码验证
+        // var username = prompt('xingming');
+        // var password = prompt('mima');
+        // var sure = prompt('yanzhengma');
+
+        // function login() {
+        //     if (isNaN(password) == true) {
+        //         alert('密码错误');
+        //     }
+        //     if (sure.length < 4) {
+        //         alert('验证码小于4位')
+        //     }
+        // }
+        // login(username, password, sure)
+
+
+
+        // function sum(a, b) {
+        //     return (a + b)
+        // };
+        // var res = sum(5, 3)
+        // console.log(res);
+
+        // function ous(n) {
+        //     if (n % 2 == 0) {
+        //         return ('偶数')
+        //     }
+        //     return ('奇数')
+        // }
+        // var xxx = ous(8);
+        // console.log(xxx);
+
+
+
+        // 密码位数验证
+        // var input = prompt('请输入密码');
+        // function panduan(sr) {
+        //     if (sr.length > 12) {
+        //         return ('太长');
+        //     }
+        //     if (sr.length < 6) {
+        //         return ('太短');
+        //     }
+        //     return ('格式正确');
+        // }
+        // var res = panduan(input);
+        // alert(res);
+
+        // alert(panduan(input));
+
+
+
+        // 平均数
+        // function pjs() {
+        //     var sum = 0;
+        //     for (var i = 0; i < arguments.length; i++) {
+        //         sum += arguments[i];
+        //     }
+        //     return (parseInt(sum / i));
+        // }
+        // alert(pjs(1, 10, 5));
+
+
+        // 喇叭花数
+        // function jc(n) {
+        //     var res = 1;//在内部！！！！！！！！！
+        //     for (var i = 1; i <= n; i++) {
+        //         res *= i
+        //     }
+        //     return res;
+        // }
+        // for (var i = 100; i <= 999; i++) {
+        //     var i_str = i.toString();
+        //     var a = Number(i_str[0]);
+        //     var b = Number(i_str[1]);
+        //     var c = Number(i_str[2]);
+        //     if (jc(a) + jc(b) + jc(c) == i) {
+        //         console.log(i);
+        //     }
+        // }
+
+
+
+        // 冒泡排序
+        // var arr = [33, 22, 18, 46];
+        // arr.sort(function (a, b) {
+        //     if (a > b) {
+        //         return 5;
+        //     }
+        //     else {
+        //         return -5;
+        //     }
+        // })
+        // console.log(arr);
+
+
+        // 数据降序排列
+        var input;
+        var arr = [];
+        while (input != '-1') {
+            input = Number(prompt('请输入数字'));
+            arr.push(input);
+            arr.sort(function (a, b) {
+                if (a < b) {
+                    return 5;
+                }
+                else {
+                    return -5;
+                }
+            })
+        }
+        arr.pop();//排除-1
+        console.log(arr)
+
+        // var a = '5789';
+        // console.log(a[2]);
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <!-- 引入在线框架 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="vue-app">
+        <div id="bag" :class="{burst:ended}"></div>
+        <div id="bag-health">
+            <!-- 进度 -->
+            <div :style="{width:health+'%'}"></div>
+        </div>
+        <div id="controls">
+            <button @click="punch" v-show="!ended">使劲敲</button>
+            <button @click="restart">重新开始</button>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- 放最后引入js -->
+    <script type="text/javascript" src="./app.js"></script>
+</body>
+
+</html>

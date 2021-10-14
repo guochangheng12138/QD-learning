@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var xiaoming = {
+            sayhello: function () {
+                console.log("你好");
+            },
+            sleep: function () {
+                console.log('开始睡觉');
+
+            }
+        }
+        xiaoming.sayhello();
+        xiaoming.sleep();
+
+        // 对象的遍历
+        var odd = {
+            a: 10,
+            b: 20,
+            c: 30
+        }
+        for (var key in odd) {
+            console.log('对象odd属性' + key + '的值是' + odd[key])
+        }
+
+    </script>
+</body>
+
+</html>

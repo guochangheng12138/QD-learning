@@ -1,0 +1,5 @@
+<block wx:if="{{type==='activity'}}">
+  <view wx:for="{{activeList}}">
+    <image src="{{item.imgUrl}}" class="active-list"></image>
+  </view>
+</block>

@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="header">
+  <input type="text" bindinput="handleInputChange" placeholder="请输入搜索内容" value="{{inputs}}" />
+  <icon wx:if="{{showIcon}}" type="search" id="f1" />
+  <icon wx:if="{{showtext}}" type="cancel" id="f2" bindtap="handleInputChange2" />
+</view>
+<text wx:if="{{showtext}}">{{text}}</text>
+
+<!-- banner -->
+<swiper previous-margin="28rpx" next-margin="45rpx" circular="{{true}}" autoplay="{{true}}" interval="1000"
+  indicator-dots="{{true}}" class="swiper">
+  <swiper-item wx:for="{{swiperList}}" wx:key="*this" class="swiper-item">
+    <image class="swiper-image" src="{{item.imgUrl}}" />
+  </swiper-item>
+</swiper>
+
+<view class="project">
+  <view class="project-title">实战推荐ssssssssssssssssssssssss</view>
+  <view class="project-item" wx:for="{{courses}}" wx:key="*this">
+    <image class="project-item-pic" src="{{item.imgUrl}}"></image>
+    <view class="project-item-content">
+      <view class="project-item-title">{{item.title}}</view>
+      <view class="project-item-tags">
+        <view wx:if="{{promotion}}" class="project-item-price-active">
+        ￥{{item.price}}
+        </view>
+        <view wx:if="{{!promotion}}" class="project-item-text">
+        ￥{{item.price}}
+        </view>
+        <view wx:if="{{item.notice}}" class="project-item-notice">
+        {{item.notice}}
+        </view>
+        <view class="project-item-text">{{item.level}}</view>
+      </view>
+    </view>
+  </view>
+</view>

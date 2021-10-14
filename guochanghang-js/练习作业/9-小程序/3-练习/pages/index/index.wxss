@@ -1,0 +1,16 @@
+.wai {
+  display: flex;
+  flex-direction: row;
+}
+
+.kcb {
+  display: flex;
+  flex-direction: column;
+  width: 60px;
+  align-items: stretch;
+}
+
+.nei {
+  border: solid 1px;
+  text-align: center;
+}

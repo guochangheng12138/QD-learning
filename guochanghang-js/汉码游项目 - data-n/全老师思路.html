@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .f5 {
+        width: 500px;
+        height: 300ox;
+        border: solid;
+    }
+
+    .gg {
+        background-color: red;
+    }
+
+    .f5 dl {
+        width: 300px;
+        height: 100ox;
+        /* background-color: green; */
+    }
+</style>
+
+<body>
+    <ul id="oul">
+        <li class="f5">
+            <dl>
+                <dt>北京</dt>
+                <dd>政治忠心</dd>
+            </dl>
+        </li>
+        <li class="f5">
+            <dl>
+                <dt>上海</dt>
+                <dd>经济忠心</dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 未解决？？？？？？？？？？？？？？？？？？？？？？？？？？ -->
+    <script type="text/javascript">
+        var oul = document.getElementById('oul');
+        oul.addEventListener('mouseover', function (e) {
+            // if (e.target.tagName.toLowerCase() == 'li') {
+            e.stopPropagation();
+            // console.log(e.target);
+            e.target.className = 'f5 gg';
+            // }
+            // else {
+            //     oul.className = 'f5 gg';
+            // }
+        }, true)
+        oul.addEventListener('mouseout', function (e) {
+            //     if (e.target.tagName.toLowerCase() == 'li') {
+            //         console.log(e.target);
+            e.target.stopPropagation();
+            e.target.className = 'f5';
+            //     }
+        }, true)
+    </script>
+</body>
+
+</html>

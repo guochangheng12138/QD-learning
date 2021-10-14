@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <SCript>
+
+        // 三种状态
+        const p = new Promise((resolve, reject) => {
+            resolve();
+        });
+        console.log(p);
+
+        // const ps = new Promise((resolve, reject) => {
+        //     reject();
+        // });
+        // console.log(ps);
+
+
+        // then()方法
+        const p1 = new Promise((resolve, reject) => {
+            // resolve();
+            reject();
+        });
+        p1.then(
+            () => {
+                console.log('success');
+            },
+            () => {
+                console.log('error');
+            }
+        )
+
+        // 参数传递
+        const p2 = new Promise((resolve, reject) => {
+            // resolve({ username: 'alex' });
+            reject({ username: 'alex' });
+            // reject(new Error('reason'));
+        });
+        p2.then(
+            data => {
+                console.log('success', data);
+            },
+            err => {
+                console.log('error', err);
+            }
+        );
+        console.log(p2);
+
+
+        // 生成promise,继续使用then
+        const p3 = new Promise((resolve, reject) => {
+            resolve();
+        });
+        const p4 = p3.then(
+            () => { },
+            () => { }
+        ).then().then();
+        console.log(p3, p4, p3 === p4)
+
+
+
+        // catch方法
+        new Promise((resolve, reject) => {
+            //resolve(123);
+            reject('reason123456');
+        }).then(
+            data => {
+                console.log(data);
+            },
+            // () => {
+            //     console.log(100);
+            // }
+        ).catch(err => {
+            console.log(err);
+            // return undefined;//会跳出
+            throw new Error('reasons-下面没第二个函数');
+        })
+
+        // finally方法
+        new Promise((resolve, reject) => {
+            reject('reson555');
+            // resolve('f5555');
+        }).finally(
+            data => {
+                console.log(data);
+            },
+        ).catch(
+            err => { }
+        )
+
+
+
+        // 简写 
+        Promise.reject('alibaba');
+    </SCript>
+</body>
+
+</html>

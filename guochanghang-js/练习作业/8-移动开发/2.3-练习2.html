@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .wk {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            /* flex-direction: row; */
+            justify-content: center;
+        }
+
+        @media (min-width:600px) {
+            .pg {
+                width: 100%;
+            }
+        }
+
+        @media (min-width:640px) {
+            .pg {
+                width: 50%;
+            }
+        }
+
+        @media (min-width:780px) {
+            .pg {
+                width: 33.333333334%;
+            }
+        }
+
+        @media (min-width:960px) {
+            .pg {
+                width: 25%;
+                align-self: center;
+            }
+        }
+    </style>
+    <div class="wk">
+        <div class="pg"><img src="img/222.jpg" alt=""></div>
+        <div class="pg"><img src="img/222.jpg" alt=""></div>
+        <div class="pg"><img src="img/222.jpg" alt=""></div>
+        <div class="pg"><img src="img/222.jpg" alt=""></div>
+        <div class="pg"><img src="img/222.jpg" alt=""></div>
+        <div class="pg"><img src="img/222.jpg" alt=""></div>
+    </div>
+</body>
+
+</html>

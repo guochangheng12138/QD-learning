@@ -1,0 +1,1522 @@
+/* 网页顶部 */
+/* 上部 */
+header div.sb{
+    width: 1366px;
+    background-color: #383D42;
+    overflow: hidden;
+}
+header div.sb>ul{
+    margin-left: 107px;
+    float: left;
+}
+header div.sb>ul>li{
+    display: inline-block;
+    color: #FFFFFF;
+    font:12px/32px PingFangSC-Regular;
+    margin-right: 18px;
+}
+/* 下拉箭头 */
+header div.sb ul li.xl::after{
+    content: "<" ;
+    display: inline-block;
+    line-height: 12px;
+    transform: rotate(-90deg);
+}
+/* 下拉箭头悬停反转 */
+header div.sb ul li.xl:hover::after{
+transform: rotate(90deg);
+}
+
+/* 不悬停下拉内容隐藏 */
+header div.sb ul li.xl ul{
+    display: none;
+    position: absolute;
+    border: solid;
+    line-height: 20px;
+}
+/* 文字悬停下拉内容展示 */
+header div.sb ul li.xl:hover.xl ul{
+    background-color: white;
+    display: block;
+    z-index: 9;
+}
+/* 下拉内容 */
+header div.sb li ul li a{
+    color: black;
+    font-size: 10px;
+}
+header div.sb li ul li a:hover{
+    color:orange;
+}   
+header div.sb ul li:nth-child(3) ul{
+    width: 120px;
+}
+header div.sb ul li:nth-child(5) ul{
+    width: 120px;
+}
+header div.sb ul li:nth-child(6) ul{
+    width: 120px;
+}
+/* 右侧搜索 */
+@font-face {
+    font-family: 'iconfont';  /* Project id 2642139 */
+    src: url('//at.alicdn.com/t/font_2642139_yil76m5kil.woff2?t=1625024311005') format('woff2'),
+         url('//at.alicdn.com/t/font_2642139_yil76m5kil.woff?t=1625024311005') format('woff'),
+         url('//at.alicdn.com/t/font_2642139_yil76m5kil.ttf?t=1625024311005') format('truetype');
+  }
+
+header div.sb>div{
+    float: right;
+    margin-right: 107px;
+    
+}
+header div.sb>div>span{
+    display: inline-block;
+    border: solid white 1px; 
+    height: 14px;
+    margin-right: 10px;
+    position: relative;
+    top: 3px;
+}
+header div.sb>div>a{
+    font-family:"iconfont";
+    font-size:12px;
+    display: inline-block;
+    color: white;
+    margin-right: 10px;
+    line-height: 32px;
+}
+header div.sb>div>a:last-child{
+    margin-right: 0;
+}
+/* 中部 */
+header div.zbbg{
+    background-color: #20BD9A;
+    overflow: hidden;
+}
+header div div.zb{
+    overflow: hidden;
+    margin-left: 107px;
+    height: 40px;
+    overflow: hidden;
+}
+header div div.zb>ul>li{
+    display: inline-block;
+    margin-right: 15px;
+    font: 16px "PingFangSC-Regular";
+    color: #FFFFFF;
+    line-height: 40px;
+}
+header div.zbbg div.zb>ul>li.zbxl::after{
+    content: "";
+    background: url(../img/组件-顶部导航图标01.png) no-repeat ;
+    display: inline-block;
+    width: 32px;
+    height: 20px;
+    position: relative;
+    left: -12px;
+    top: -3px;
+    margin-right: -12px;
+}
+header div.zbbg div.zb>ul>li.zbxl:hover::after{
+    transform: rotate(-180deg);
+    position: relative;
+    top: 10px;
+}
+.zbxl>ul{
+    position: absolute;
+    display: none;
+    border: solid;
+}
+#zbxl1{
+    width: 150px;
+}
+#zbxl2{
+    width: 90px;
+}
+#zbxl3{
+    width: 210px;
+}
+#zbxl4{
+    width: 160px;
+}
+
+.zbxl:hover.zbxl>ul{
+    display: block;
+    background-color: white;
+    line-height: 20px;
+}
+.zbxl:hover.zbxl>ul>li{
+    display: inline-block;
+}
+.zbxl:hover.zbxl>ul>p{
+    color: black;
+    font-size: 14px;
+}
+.zbxl:hover.zbxl>ul>li>a{
+    color: black;
+    font-size: 10px;
+}
+.zbxl:hover.zbxl>ul>li>a:hover{
+    color:orange;
+}
+
+/* 下部 */
+.xb{
+    overflow: hidden;
+}
+.xb>b>h1{
+    float: left;
+    font: 24px/36px "PingFangSC-Medium";
+    color: #20BD9A ;
+    margin-left: 107px;
+    margin-top: 21px;
+    margin-bottom: 21px;
+}
+.xb>div{
+    float: left;
+    border: solid 1px;
+    border-color: #20BD9A;
+    border-radius: 8px;
+    width: 405px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 21px;
+    overflow: hidden;
+}
+.xb>div>form>input[type="search"]{
+    width: 375px;
+    height: 30px;
+    border: none;
+    outline: none;
+    float: left;
+}
+.xb>div>form>button{
+    float: left;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #20BD9A ;
+    border-radius: 0 8px 8px 0;
+}
+#ss1{
+    width: 20px;
+}
+/* 轮播图 */
+.banner{
+    overflow: hidden;
+    position: relative;
+}
+#diceng{
+    width: 1366px;
+}
+/* 箭头 */
+.zjt{
+    width: 28px;
+    height: 44px;
+    position: absolute;
+    top: 188px;
+    left:67px;
+    background:url(../img/icons.png);
+    background-position: -21px -94px;
+}
+.yjt{
+    width: 28px;
+    height: 44px;
+    background:url(../img/icons.png);
+    background-position: -21px -29px;
+    position: absolute;
+    top: 188px;
+    right:67px;
+}
+.zjt:hover{
+    background:url(../img/左箭头.png);
+    background-size: 28px 44px;
+}
+.yjt:hover{
+    background:url(../img/右箭头.png);
+    background-size: 28px 44px;
+}
+/* 左透明菜单 */
+.ztm{
+    width: 296px;
+    height: 420px;
+    /* border: solid; */
+    position: absolute;
+    top: 0;
+    left: 107px;
+}
+.ztmcd{
+    /* border: solid; */
+    overflow: hidden;
+    height: 70px;
+    background-color: rgba(0,0,0,0.4);
+}
+.ztmcd div dt{
+    font: 18px/26px "PingFangSC-Regular";
+    color: #FFFFFF;
+}
+.ztmcd div dd{
+    font: 14px/22px "PingFangSC-Regular";
+    color: #FFFFFF;
+}
+.ztmcd img{
+    float: left;
+    width: 22px;
+    margin-top: 22px;
+    margin-left: 10px;
+}
+.ztmcd dl{
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.ztmcd p{
+    float: right;
+    color: #FFFFFF;
+    margin-top: 20px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+/* 鼠标悬停透明度改变 */
+/* .ztmcd1:hover.ztmcd1{
+    background-color: rgba(0,0,0,0.6);
+}
+.ztmcd2:hover.ztmcd2{
+    background-color: rgba(0,0,0,0.6);
+}
+.ztmcd3:hover.ztmcd3{
+    background-color: rgba(0,0,0,0.6);
+}
+.ztmcd4:hover.ztmcd4{
+    background-color: rgba(0,0,0,0.6);
+}
+.ztmcd5:hover.ztmcd5{
+    background-color: rgba(0,0,0,0.6);
+}
+.ztmcd6:hover.ztmcd6{
+    background-color: rgba(0,0,0,0.6);
+} */
+/* 右透明菜单 */
+.ytmcd{
+    width: 356px;
+    height: 420px;
+    position: absolute;
+    top: 0;
+    left: 296px;
+    padding-right: 10px;
+    background-color: rgba(0,0,0,0.6);
+    display: none;
+    z-index: 99;
+    line-height: 82px;
+}
+.ytmcd dl{
+    margin-top: 10px;
+    margin-left: 10px;
+    line-height: 82px!important;
+}
+.ytmcd dt{
+    font: 16px/42px "PingFangSC-Regular"!important;
+    color: #FFFFFF;
+}
+.ytmcd dd{
+    font: 14px/26px "PingFangSC-Regular"!important;
+    color: #FFFFFF;
+}
+/* 鼠标悬停右侧显示 */
+/* .ztmcd1:hover .ytmcd1{
+    display:block;
+}
+.ztmcd2:hover .ytmcd2{
+    display:block;
+}
+.ztmcd3:hover .ytmcd3{
+    display:block;
+}
+.ztmcd4:hover .ytmcd4{
+    display:block;
+}
+.ztmcd5:hover .ytmcd5{
+    display:block;
+}
+.ztmcd6:hover .ytmcd6{
+    display:block;
+} */
+/* 宣传图 */
+aside{
+    width: 1184px;
+    overflow: hidden;
+    margin-left: 107px;
+    margin-top: 32px;
+}
+aside img{
+    display: block;
+    float: left;
+    margin-right: 32px;
+    margin-bottom: 32px;
+}
+/* 网页主体 */
+/* 新鲜甩尾 */
+.xxsw-bg{
+    width: 1366px;
+    height: 738px;
+    overflow: hidden;
+    background-color: #F7F7F7 ;
+}
+/* 标题 */
+.xxsw-bt{
+    height: 126px;
+    overflow: hidden;
+    margin-left: 107px;
+}
+.xxsw-bt h2{
+    float: left;
+    position: relative;
+    top:50%;
+    margin-top: -27px;
+}
+.xxsw-bt h3{
+    float: left;
+    margin-left: 12px;
+    margin-top: 60px;
+}
+/* 内容 */
+.xxsw-zt{
+    width: 1184px;
+    overflow: hidden;
+    margin-left: 107px;
+}
+.xxsw-zt-wz{
+    font: 14px/22px "PingFangSC-Regular";
+    color: #1C1F21;
+    width: 240px;
+    position: relative;
+    top:15px;
+    left:10px     
+}
+.xxswzt img{
+    display: block;
+    width: 264px;
+    height: 184px;
+}
+.xxsw-zt0{
+    width: 264px;
+    height: 270px;
+    background-color: #FFFFFF;
+    margin-right: 32px;
+    margin-bottom: 32px;
+    float: left;
+}
+.xxsw-zt-tp{
+    overflow: hidden;
+}
+/* 悬停图片放大 */
+.xxsw-zt1 .xxsw-zt-tp:hover .xxsw-zt-tp1{
+    transform: scale(1.2);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.xxsw-zt2 .xxsw-zt-tp:hover .xxsw-zt-tp2{
+    transform: scale(1.2);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.xxsw-zt3 .xxsw-zt-tp:hover .xxsw-zt-tp3{
+    transform: scale(1.2);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.xxsw-zt4 .xxsw-zt-tp:hover .xxsw-zt-tp4{
+    transform: scale(1.2);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.xxsw-zt5 .xxsw-zt-tp:hover .xxsw-zt-tp5{
+    transform: scale(1.2);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.xxsw-zt6 .xxsw-zt-tp:hover .xxsw-zt-tp6{
+    transform: scale(1.2);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.xxsw-zt7 .xxsw-zt-tp:hover .xxsw-zt-tp7{
+    transform: scale(1.2);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.xxsw-zt8 .xxsw-zt-tp:hover .xxsw-zt-tp8{
+    transform: scale(1.2);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+/* 悬停阴影 */
+.xxsw-zt1:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+.xxsw-zt2:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+.xxsw-zt3:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+.xxsw-zt4:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+.xxsw-zt5:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+.xxsw-zt6:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+.xxsw-zt7:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+.xxsw-zt8:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+/* 机酒自由行 */
+.jjzyx-bg{
+    height: 738px;
+}
+/* 标题 */
+.jjzyx-bt{
+    height: 126px;
+    width: 1152px;
+    margin-left: 107px;
+}
+.jjzyx-bt h2{
+    float: left;
+    margin-top: 40px;
+}
+.jjzyx-bt h3{
+    float: left;
+    margin-top: 67px;
+    margin-left: 12px;
+}
+.jjzyx-bt ul{
+    float: right;
+}
+.jjzyx-bt ul li{
+    display: inline-block;
+    font: 14px/22px "PingFangSC-Regular";
+    margin-left: 14px;
+    margin-top: 52px;
+}
+.jjzyx-bt ul li a{
+    color: black;
+}
+.jjzyx-bt ul li a:hover{
+    color: #20BD9A ;
+    border-bottom: solid 5px;
+}
+ /* 内容 */
+ .jjzyx-zt{
+    width: 1184px;
+    overflow: hidden;
+    margin-left: 107px;
+ }
+ .jjzyx-zt00{
+    width: 560px;
+    height: 270px;
+    background-color: #FFFFFF;
+    margin-right: 32px;
+    margin-bottom: 32px;
+    float: left;
+}
+ .jjzyx-zt0{
+    width: 264px;
+    height: 270px;
+    background-color: #FFFFFF;
+    margin-right: 32px;
+    margin-bottom: 32px;
+    float: left;
+}
+.jjzyx-wz{
+    font: 14px/22px "PingFangSC-Regular";
+    color: #1C1F21;
+    width: 240px;
+    position: relative;
+    top:15px;
+    left:10px     
+}
+.jjzyx img{
+    display: block;
+}
+.jjzyx-tp0{
+    overflow: hidden;
+}
+.jjzyx-tp22{
+    overflow: hidden;
+}
+.jjzyx-tp33{
+    overflow: hidden;
+}
+.jjzyx-tp44{
+    overflow: hidden;
+}
+.jjzyx-tp55{
+    overflow: hidden;
+}
+.jjzyx-tp66{
+    overflow: hidden;
+}
+/* 悬停图片放大 */
+.jjzyx-tp0:hover .jjzyx-tp1{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.jjzyx-tp22:hover .jjzyx-tp2{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.jjzyx-tp33:hover .jjzyx-tp3{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.jjzyx-tp44:hover .jjzyx-tp4{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.jjzyx-tp55:hover .jjzyx-tp5{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.jjzyx-tp66:hover .jjzyx-tp6{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+/* 悬停阴影 */
+.jjzyx-zt0:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+.jjzyx-zt00:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+
+/* 遮罩层 */
+.xbq{
+    background-color: rgba(0,0,0,0.6);
+    color:#FFFFFF;
+    font: 14px/22px "PingFangSC-Regular";
+    width: 50px;
+    height: 30px;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+.zbq{
+    background-color: rgba(0,0,0,0.6);
+    color:#FFFFFF;
+    font: 14px/22px "PingFangSC-Regular";
+    width: 60px;
+    height: 30px;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+.dbq{
+    background-color: rgba(0,0,0,0.6);
+    color:#FFFFFF;
+    font: 14px/22px "PingFangSC-Regular";
+    width: 545px;
+    height: 75px;
+    padding-left: 15px;
+    padding-top: 28px;
+}
+.jjzyx-zt00{
+    position: relative;
+}
+.jjzyx-zt0{
+    position: relative;
+}
+.xbq1{
+    position: absolute;
+    top: 126px;
+}
+.dbq{
+    position: absolute;
+    top: 165px;
+}
+.zbq2{
+    position: absolute;
+    top: 144px;
+}
+.xbq3{
+    position: absolute;
+    top: 144px;
+}
+/* 右下角链接部分 */
+.jjzyx-zt7{
+    background-image: linear-gradient(to bottom,#34E3BC,#15AF7A);
+}
+.jjzyx-wz7{
+    color: white!important;
+}
+.jjzyx-zt7 img{
+    width: 40px;
+}
+#jjzyx01{
+    width: 58px;
+    margin:46px auto 0px;
+}
+#jjzyx02{
+    width: 100px;
+    margin: 5px auto 0px;
+}
+#jjzyx-jt{
+    margin-left: 95px;
+    margin-top: 20px;
+}
+#jjzyx03{
+    width: 160px;
+    margin: 30px auto 46px;
+}
+@keyframes identifier {
+    from{
+        transform: translate(0,0);
+    }
+    to{
+        transform: translate(0,20px);
+    }
+}
+.jjzyx-zt7:hover #jjzyx-jt{
+    animation-play-state:running;
+    animation: identifier 0.4s linear 0s infinite alternate;
+}
+/* 当地玩乐 */
+.ddwl-bg{
+    height: 586px;
+    background-color: #F7F7F7 ;
+}
+/* 标题 */
+.ddwl-bt{
+    height: 126px;
+    width: 1152px;
+    margin-left: 107px;
+}
+.ddwl-bt h2{
+    float: left;
+    margin-top: 40px;
+}
+.ddwl-bt h3{
+    float: left;
+    margin-top: 67px;
+    margin-left: 12px;
+}
+.ddwl-bt ul{
+    float: right;
+}
+.ddwl-bt ul li{
+    display: inline-block;
+    font: 14px/22px "PingFangSC-Regular";
+    margin-left: 14px;
+    margin-top: 52px;
+}
+.ddwl-bt ul li a{
+    color:black;
+}
+.ddwl-bt ul li a:hover{
+    color: #20BD9A ;
+    border-bottom: solid 5px;
+}
+/* 内容 */
+.ddwl-zt{
+    width: 1230px;
+    overflow: hidden;
+    margin-left: 107px;
+ }
+ .ddwl-ztl,.ddwl-ztz,.ddwl-zty{
+     overflow: hidden;
+     float: left;
+ }
+ .ddwl-ztl,.ddwl-ztz,.ddwl-zty img{
+     display: block;
+ }
+ .dbf,.xbf{
+    margin-right: 30px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    position: relative;
+ }
+ .dbf{
+    width: 364px;
+ }
+
+ .xbftp{
+     width: 120px;
+     height: 120px;
+ }
+ .xbftp img{
+     width: 120px;
+     height: 120px;
+ }
+ .xbftp,.xbfwz{
+     float: left;
+     overflow: hidden;
+     /* border: solid; */
+ }
+ .xbfwz{
+    width: 204px;
+    height: 95px;
+    background-color: #FFFFFF;
+    font: 14px/22px "PingFangSC-Regular";
+    color: #1C1F21;
+    padding-left: 20px;
+    padding-top: 25px;
+    padding-right: 20px;
+    /* border: solid; */
+}
+/* 悬停图片放大 */
+.dbf1:hover .dbftp1{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.xbf2:hover .xbftp2{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.xbf3:hover .xbftp3{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.xbf4:hover .xbftp4{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.xbf5:hover .xbftp5{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.xbf6:hover .xbftp6{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+/* 悬停阴影 */
+.dbf1:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+.xbf2:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+.xbf2:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+.xbf3:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+.xbf4:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+.xbf5:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+.xbf6:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+ /* 遮罩层 */
+.ddwl-dbq{
+    background-color: rgba(0,0,0,0.6);
+    color:#FFFFFF;
+    font: 14px/22px "PingFangSC-Regular";
+    width: 354px;
+    height: 104px;
+    padding-left: 15px;
+    padding-top: 10px;
+    position: absolute;
+    top: 156px;
+    z-index: 99;
+}
+#ddwl-dbq1{
+    width: 322px;
+    height: 44px;
+    margin-bottom: 24px;
+}
+#ddwl-dbq2{
+    width: 56px;
+    height: 22px;
+    float: left;
+}
+#ddwl-dbq3{
+    width: 28px;
+    height: 22px;
+    float: right;
+    color: #20BD9A ;
+}
+#ddwl-dbq4{
+    width: 32px;
+    height: 28px;
+    float: right;
+    margin-right: 5px;
+}
+/* 右下角链接部分 */
+.dbf2{
+    background-image: linear-gradient(to bottom,#FF6374,#FF7368);
+    height: 270px;
+}
+.dbf2{
+    color: white!important;
+}
+.dbf2 img{
+    width: 40px;
+}
+#ddwl01{
+    width: 68px;
+    margin:46px auto 0px;
+}
+#ddwl02{
+    width: 100px;
+    margin: 5px auto 0px;
+}
+#ddwl-jt{
+    margin-left: 160px;
+    margin-top: 20px;
+}
+#ddwl03{
+    width: 325px;
+    margin: 30px auto 46px;
+}
+.dbf2:hover #ddwl-jt{
+    animation-play-state:running;
+    animation: identifier 0.4s linear 0s infinite alternate;
+}
+/* 特色当地体验 */
+.tsddty-bg{
+    width: 1366px;
+    height: 456px;
+    overflow: hidden;
+    background-color: #FFFFFF ;
+}
+/* 标题 */
+.tsddty-bt{
+    height: 126px;
+    overflow: hidden;
+    margin-left: 107px;
+}
+.tsddty-bt h2{
+    float: left;
+    position: relative;
+    top:50%;
+    margin-top: -27px;
+    margin-left: 468px;
+}
+/* 内容 */
+.tsddty-zt{
+    width: 1184px;
+    overflow: hidden;
+    margin-left: 107px;
+}
+.tsddty-zt-wz{
+    color: #1C1F21;
+    width: 240px;
+    height: 106px;
+    overflow: hidden;
+    position: relative;
+    top:15px;
+    left:10px     
+}
+.xwz1{
+    font: 16px/24px "PingFangSC-Medium";
+    font-weight: 600;
+}
+.xwz2{
+    font: 12px/18px "PingFangSC-Medium";
+    font-weight: 600;
+    color: #FA6400;
+    float: left;
+}
+.xwz3{
+    font: 12px/18px "PingFangSC-Regular";
+    font-weight: 600;
+    float:right;
+}
+.tsddty-zt img{
+    display: block;
+    width: 264px;
+    height: 184px;
+}
+.tsddty-zt0{
+    width: 264px;
+    height: 290px;
+    background-color: #FFFFFF;
+    margin-right: 32px;
+    margin-bottom: 32px;
+    float: left;
+    /* border: solid; */
+}
+.tsddty-zt-tp{
+    width: 264px;
+    height: 184px;
+    overflow: hidden;
+}
+/* 悬停图片放大 */
+.tsddty-zt-tp1:hover{
+    transform: scale(1.2);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.tsddty-zt-tp2:hover{
+    transform: scale(1.2);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.tsddty-zt-tp3:hover{
+    transform: scale(1.2);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.tsddty-zt-tp4:hover{
+    transform: scale(1.2);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+/* 悬停阴影 */
+.tsddty-zt0:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+
+/* 最世界·深度旅行 */
+.zsj-bg{
+    height: 738px;
+    background-color: #F7F7F7;
+}
+/* 标题 */
+.zsj-bt{
+    height: 126px;
+    width: 1152px;
+    margin-left: 107px;
+}
+.zsj-bt h2{
+    float: left;
+    margin-top: 40px;
+}
+.zsj-bt h3{
+    float: left;
+    margin-top: 67px;
+    margin-left: 12px;
+}
+.zsj-bt ul{
+    float: right;
+    margin-top: 52px;
+}
+.zsj ul li{
+    display: inline-block;
+    font: 14px/22px "PingFangSC-Regular";
+    margin-left: 14px;
+    margin-top: 52px;
+}
+.zsj ul li sa{
+    color: black;
+}
+.zsj-bt ul li a:hover{
+    color: #20BD9A ;
+    border-bottom: solid 5px;
+}
+ /* 内容 */
+ .zsj-zt{
+    width: 1184px;
+    overflow: hidden;
+    margin-left: 107px;
+ }
+ .zsj-zt00{
+    width: 560px;
+    height: 270px;
+    background-color: #FFFFFF;
+    margin-right: 32px;
+    margin-bottom: 32px;
+    float: left;
+}
+ .zsj-zt0{
+    width: 264px;
+    height: 270px;
+    background-color: #FFFFFF;
+    margin-right: 32px;
+    margin-bottom: 32px;
+    float: left;
+}
+.zsj-wz{
+    font: 14px/22px "PingFangSC-Regular";
+    color: #1C1F21;
+    width: 240px;
+    position: relative;
+    top:15px;
+    left:10px     
+}
+.zsj img{
+    display: block;
+}
+.zsj-tp0{
+    overflow: hidden;
+}
+.zsj-tp22{
+    overflow: hidden;
+}
+.zsj-tp33{
+    overflow: hidden;
+}
+.zsj-tp44{
+    overflow: hidden;
+}
+.zsj-tp55{
+    overflow: hidden;
+}
+.zsj-tp66{
+    overflow: hidden;
+}
+/* 悬停图片放大 */
+.zsj-tp0:hover .zsj-tp1{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.zsj-tp22:hover .zsj-tp2{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.zsj-tp33:hover .zsj-tp3{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.zsj-tp44:hover .zsj-tp4{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.zsj-tp55:hover .zsj-tp5{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.zsj-tp66:hover .zsj-tp6{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+/* 悬停阴影 */
+.zsj-zt0:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+.zsj-zt00:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+
+/* 遮罩层 */
+.zsj-zt1{
+    position: relative;
+}
+.zsj-zzc{
+    overflow: hidden;
+    width: 560px;
+    height: 270px;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0,0,0,0.6);
+    opacity:0;
+}
+.zsj-sfr{
+    font-size: 20px;
+    border: solid 2px white;
+    border-radius: 50% 50%;
+    width: 100px;
+    height: 100px;
+    color:white;
+    position: absolute;
+    top: -60px;
+    left: 230px;
+    text-align: center;
+    line-height:2;
+}
+.zsj-xfr{
+    font-size: 14px;
+    color:white;
+    position: absolute;
+    width: 508px;
+    height: 22px;
+    top: 250px;
+    left: 30px;
+    text-align: center;
+}
+.zsj-zzc:hover{
+     opacity: 0.6;
+     transition: all 0.5s linear 0s;
+}
+.zsj-zzc:hover .zsj-sfr{
+    position: absolute;
+    top: 60px;
+    left: 230px;
+    transition: all 0.5s linear 0s;
+}
+.zsj-zzc:hover .zsj-xfr{
+    position: absolute;
+    top: 220px;
+    left: 30px;
+    transition: all 0.5s linear 0s;
+}
+/* 右下角链接部分 */
+.zsj-zt7{
+    background-image: linear-gradient(to bottom,#BD5EE8,#832ABB);
+}
+.zsj-wz7{
+    color: white!important;
+}
+.zsj-zt7 img{
+    width: 40px;
+}
+#zsj01{
+    width: 58px;
+    margin:46px auto 0px;
+}
+#zsj02{
+    width: 85px;
+    margin: 5px auto 0px;
+}
+#zsj-jt{
+    margin-left: 95px;
+    margin-top: 20px;
+}
+#zsj03{
+    width: 150px;
+    margin: 30px auto 46px;
+}
+@keyframes identifier {
+    from{
+        transform: translate(0,0);
+    }
+    to{
+        transform: translate(0,20px);
+    }
+}
+.zsj-zt7:hover #zsj-jt{
+    animation-play-state:running;
+    animation: identifier 0.4s linear 0s infinite alternate;
+}
+/* 跟团/半自助游 */
+.gt-bg{
+    height: 738px;
+    overflow: hidden;
+}
+/* 标题 */
+.gt-bt{
+    height: 126px;
+    width: 1152px;
+    margin-left: 107px;
+}
+.gt-bt h2{
+    float: left;
+    margin-top: 40px;
+}
+.gt-bt h3{
+    float: left;
+    margin-top: 67px;
+    margin-left: 12px;
+}
+.gt-bt ul{
+    float: right;
+}
+.gt-bt ul li{
+    display: inline-block;
+    font: 14px/22px "PingFangSC-Regular";
+    margin-left: 14px;
+    margin-top: 52px;
+}
+.gt-bt ul li a{
+    color: black;
+}
+.gt-bt ul li a:hover{
+    color: #20BD9A ;
+    border-bottom: solid 5px;
+}
+ /* 内容 */
+ .gt-zt{
+    width: 1184px;
+    overflow: hidden;
+    margin-left: 107px;
+ }
+ .gt-zt00{
+    width: 560px;
+    height: 270px;
+    background-color: #FFFFFF;
+    margin-right: 32px;
+    margin-bottom: 32px;
+    float: left;
+}
+.gt-zt0{
+    width: 264px;
+    height: 270px;
+    background-color: #FFFFFF;
+    margin-right: 32px;
+    margin-bottom: 32px;
+    float: left;
+}
+.gt-wz{
+    font: 14px/22px "PingFangSC-Regular";
+    color: #1C1F21;
+    width: 240px;
+    position: relative;
+    top:15px;
+    left:10px     
+}
+.gt img{
+    display: block;
+}
+.gt-tp0{
+    overflow: hidden;
+}
+.gt-tp22{
+    overflow: hidden;
+}
+.gt-tp33{
+    overflow: hidden;
+}
+.gt-tp44{
+    overflow: hidden;
+}
+.gt-tp55{
+    overflow: hidden;
+}
+.gt-tp66{
+    overflow: hidden;
+}
+/* 悬停图片放大 */
+.gt-tp0:hover .gt-tp1{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.gt-tp22:hover .gt-tp2{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.gt-tp33:hover .gt-tp3{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.gt-tp44:hover .gt-tp4{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.gt-tp55:hover .gt-tp5{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+.gt-tp66:hover .gt-tp6{
+    transform: scale(1.1);
+    transform-origin:50% 50% ;
+    transition: all 1s linear 0s;
+}
+/* 悬停阴影 */
+.gt-zt0:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+.gt-zt00:hover{
+    box-shadow:10px 10px 30px rgba(0,0,0,0.4) ;
+}
+
+/* 遮罩层 */
+.gt-zt1{
+    position: relative;
+}
+.gt-zzc{
+    overflow: hidden;
+    width: 560px;
+    height: 270px;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity:0;
+}
+.gt-sfr{
+    font-size: 32px;
+    border: solid 2px white;
+    border-radius: 50% 50%;
+    width: 100px;
+    height: 100px;
+    color:white;
+    position: absolute;
+    top: -60px;
+    left: 230px;
+    text-align: center;
+}
+.gt-xfr{
+    font-size: 14px;
+    color:white;
+    position: absolute;
+    width: 508px;
+    height: 22px;
+    top: 250px;
+    left: 30px;
+    text-align: center;
+}
+.gt-zzc:hover{
+     opacity: 0.6;
+     transition: all 0.5s linear 0s;
+}
+.gt-zzc:hover .gt-sfr{
+    position: absolute;
+    top: 60px;
+    left: 230px;
+    transition: all 0.5s linear 0s;
+}
+.gt-zzc:hover .gt-xfr{
+    position: absolute;
+    top: 220px;
+    left: 30px;
+    transition: all 0.5s linear 0s;
+}
+/* 右下角链接部分 */
+.gt-zt7{
+    background-image: linear-gradient(to bottom,#41D8E9,#3685EA);
+}
+.gt-wz7{
+    color: white!important;
+}
+.gt-zt7 img{
+    width: 40px;
+}
+#gt01{
+    width: 58px;
+    margin:46px auto 0px;
+}
+#gt02{
+    width: 120px;
+    margin: 5px auto 0px;
+}
+#gt-jt{
+    margin-left: 95px;
+    margin-top: 20px;
+}
+#gt03{
+    width: 120px;
+    margin: 30px auto 46px;
+}
+@keyframes identifier {
+    from{
+        transform: translate(0,0);
+    }
+    to{
+        transform: translate(0,20px);
+    }
+}
+.gt-zt7:hover #gt-jt{
+    animation-play-state:running;
+    animation: identifier 0.4s linear 0s infinite alternate;
+}
+/* 页脚1 */
+.footer1{
+    height: 220px;
+    background-color: #F7F7F7;
+    overflow: hidden;
+}
+.footer1 ul.f555 li a{
+    font: 18px/18px "PingFangSC-Regular";
+    padding-right: 24px;
+    border-right:solid 2px;
+    color: black;
+}
+.footer1 ul.f555 li:last-child a{
+    border-right:none;
+}
+.footer1 ul.f555 li {
+    float: left;
+    margin-right: 28px;
+}
+.footer1 ul.f555{
+    margin-left: 107px;
+    margin-top: 36px;
+    margin-bottom: 40px;
+}
+.f1-deh img[alt="da"]{
+    width: 60px;
+}
+.f1-deh{
+    width:1182px ;
+    overflow: hidden;
+    margin-top: 104px;
+    margin-left: 107px;
+}
+.f1-deh>li{
+    width: 364px;
+    float: left;
+    margin-right: 28px
+}
+.f1-deh-z img{
+    float: left;
+    margin-right: 20px
+}
+.f1-deh-y1{
+    font: 16px/24px "PingFangSC-Semibold";
+    margin-bottom: 10px;
+}
+.f1-deh-y2{
+    font: 14px/22px "PingFangSC-Semibold";
+}
+/* 页脚2 */
+.footer2{
+    overflow: hidden;
+    height: 225px;
+    background-color: #1C1F21 ;
+    color: white;
+}
+.f2-h1 div:first-child{
+    font: 46px/46px "PingFangSC-Regular";
+    float: left;
+    margin-top: 48px;
+    margin-left: 107px;
+}
+.f2-h1 div:last-child{
+    font: 14px/22px "PingFangSC-Regular";
+    float: left;
+    margin-top: 49px;
+    margin-left: 21px;
+    width: 532px;
+    height: 44px;
+}
+.footer2 ul{
+    clear: both;
+    margin-left: 107px;
+}
+.footer2 ul li a{
+    color: white;
+    font: 14px/14px "PingFangSC-Regular";
+    float:left ;
+    border-right: 1px solid;
+    padding-right: 20px;
+    margin-right: 20px;
+    margin-top: 31px;
+    margin-bottom: 10px;
+}
+.footer2 ul li:last-child a{
+    border-right:none;
+}
+.footer2 ul li{
+    margin-right: 20px;
+} 
+.f2-h3{
+    clear: both;
+    margin-left: 107px;
+}
+/* 返回顶部 */
+.fhdb{
+    background-color: rgba(0,0,0,0.6);
+    width: 80px;
+    position: fixed;
+    top:400px;
+    left:1448px
+}

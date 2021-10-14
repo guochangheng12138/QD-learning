@@ -1,0 +1,82 @@
+<!--index.wxml-->
+
+
+<!-- sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss -->
+<!-- 练习 -->
+<import src="./msg-template.wxml" />
+<view class="container">
+  <!-- <template is="msg-template" data="{{...item}}" /> -->
+  <!-- <block wx:for="{{postItems}}" wx:for-item="item" wx:for-index="idx">
+    <template is="msg-template" data="{{...item}}" />
+  </block> -->
+
+  <!-- <template is="msg-template" data="{{text:'fbi'}}" /> -->
+
+
+  <template is="msg-template" data="{{...staffA}}"></template>
+  <template is="msg-template" data="{{...staffB}}"></template>
+  <template is="msg-template" data="{{...staffC}}"></template>
+</view>
+
+
+<include src="header.wxml" />
+<view>body</view>
+<include src="header.wxml" />
+
+<!-- 点击事件与冒泡 -->
+<view id="outer" bindtap="outtap">
+  <view id="inner" bindtap="innertap">innerview</view>
+</view>
+
+<!-- 导航 -->
+<view class="container">
+  <navigator url="/pages/info/info?title=navigate">
+    <view>跳转新页面</view>
+  </navigator>
+
+  <navigator url="/pages/info/info?title=redirect" open-type="redirect">
+    <view>在当前页打开</view>
+  </navigator>
+
+  <!-- 需要app.json先设置好tabbar，并在app.json做好索引 -->
+  <navigator url="/pages/logs/logs" open-type="switchTab">
+    <view>切换tap</view>
+  </navigator>
+
+  <!-- 路由 -->
+  <view bindtap="urltap1">保留当前，跳转非tabbar</view>
+  <view bindtap="urltap2">关闭当前，跳转非tabbar</view>
+  <view bindtap="urltap3">关闭所有非tabbar，跳转tabbar</view>
+
+  <view bindtap="urltap4">返回上级或多级</view>
+</view>
+
+<!-- ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss -->
+
+
+
+
+
+<view class="container">
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+
+</view>

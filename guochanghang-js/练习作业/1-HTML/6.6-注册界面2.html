@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="1.html">
+        <table border="1" cellspacing="0">
+            <tr>
+                <td>密码：</td>
+                <td>
+                    <input type="password">
+                    <font color="red">*密码不符合安全规则</font>
+                </td>
+            </tr>
+            <tr>
+                <td>重复：</td>
+                <td>
+                    <input type="password">
+                </td>
+            </tr>
+            <tr>
+                <td>信箱：</td>
+                <td>
+                    <input type="email">
+                    <font color="red">*信箱格式不正确</font>
+                </td>
+            </tr>
+            <tr>
+                <td>信箱：</td>
+                <td>
+                    <input type="email">
+                </td>
+            </tr>
+            <tr>
+                <td>QQ：</td>
+                <td>
+                    <input type="number">
+                </td>
+            </tr>
+            <tr>
+                <td>身份证：</td>
+                <td>
+                    <input type="number">
+                    <font color="red">*身份证号码不正确</font>
+                </td>
+            </tr>
+            <tr>
+                <td>年龄：</td>
+                <td>
+                    <input type="number" max="28" min="18" style="width: 157px;">
+                    <font color="red">*年龄必须在18~28之间</font>
+                </td>
+            </tr>
+            <tr>
+                <td>年龄1：</td>
+                <td>
+                    <input type="number" max="28" min="18" style="width: 157px;">
+                </td>
+            </tr>
+            <tr>
+                <td>电话：</td>
+                <td>
+                    <input type="number">
+                </td>
+            </tr>
+            <tr>
+                <td>手机：</td>
+                <td>
+                    <input type="number">
+                </td>
+            </tr>
+            <tr>
+                <td>生日：</td>
+                <td>
+                    <input type="date">
+                    <font color="red">*生日日期不存在</font>
+                </td>
+            </tr>
+            <tr>
+                <td>邮政编码：</td>
+                <td>
+                    <input type="number">
+                    <font color="red">*邮政编码不存在</font>
+                </td>
+            </tr>
+            <tr>
+                <td>邮政编码：</td>
+                <td>
+                    <input type="number">
+                    <font color="red">*邮政编码不存在</font>
+                </td>
+            </tr>
+            <tr>
+                <td>操作系统：</td>
+                <td>
+                    <select>
+                        <option value="">选择您所使用的操作系统</option>
+                        <option value="pc">pc</option>
+                        <option value="ios">ios</option>
+                        <option value="linux">linux</option>
+                    </select>
+                    <font color="red">*未选择所用操作系统</font>
+                </td>
+            </tr>
+            <tr>
+                <td>所在省份：</td>
+                <td>
+                    广东<input type="radio" value="广东" name="地区">
+                    陕西<input type="radio" value="陕西" name="地区">
+                    浙江<input type="radio" value="浙江" name="地区">
+                    江西<input type="radio" value="江西" name="地区">
+                    <font color="red">*必须选定一个省份</font>
+                </td>
+            </tr>
+            <tr>
+                <td>爱好：</td>
+                <td>
+                    运动<input type="checkbox" value="运动" name="爱好">
+                    上网<input type="checkbox" value="上网" name="爱好">
+                    听音乐<input type="checkbox" value="听音乐" name="爱好">
+                    看书<input type="checkbox" value="看书" name="爱好">
+                    <font color="red">*必须选择2~3种爱好</font>
+                </td>
+            </tr>
+            <tr>
+                <td>自我介绍：</td>
+                <td>
+                    <textarea name="" id="" cols="30" rows="5" placeholder="中文是一个字"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>自传：</td>
+                <td>
+                    <textarea name="" id="" cols="30" rows="5" placeholder="中文是两个字节t"></textarea>
+                    <font color="red">*自传内容</font><br>
+                    必须在[3，10]个字节之内
+                </td>
+            </tr>
+            <tr>
+                <td>相片上传：</td>
+                <td>
+                    <input type="file">
+                    <font color="red">*非法的文件格式</font>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button>确定提交</button>
+                    <button>检验模式1</button>
+                    <button>检验模式2</button>
+                    <button>检验模式3</button>
+                </td>
+                <!-- <td></td> -->
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

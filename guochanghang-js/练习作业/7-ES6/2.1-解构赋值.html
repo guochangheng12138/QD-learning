@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 原理
+        // const [a, b, c] = [1, 2, 3];
+        // console.log(a, b, c);
+
+        // 不用取值的，逗号隔开
+        // const [a, [, , b], c] = [1, [2, 4, 5], 7];
+        // console.log(a, b, c);
+
+        // 默认值
+        const [aa, bb] = [];
+        console.log(aa, bb);
+
+        const [a1 = 32, b1 = 2] = [];
+        console.log(a1, b1);
+
+        const [a2 = 3, b2 = 78] = [7, null];
+        console.log(a2, b2);
+        const [a3 = 34, b3 = 33] = [55];
+        console.log(a3, b3);
+
+        // 默认表达式
+        const func = () => {
+            console.log("我被执行了");
+            return 2;
+        };
+        const [x = func] = [1]; // func函数不会执行,因为默认值不是undefined
+        console.log(x);
+
+        const arr = ['a', ['b', 'c', ['d'], [undefined, 'g', ['xx'], ['y']]], 'h', ['i']];
+        const [a = 0, [b = 0, c = 0, [d = 0], [sc = 55, g = 6, [xx = 8], [y = 66]]], h = 25, [i = 28]] = arr;
+        console.log(a, b);
+    </script>
+
+    <!-- // 类数组解构赋值应用 -->
+    <script>
+        function funx() {
+            const [a, b] = arguments;
+            console.log(a, b);
+        }
+        funx(96, 3)
+    </script>
+
+
+    <p>123</p>
+    <p>321</p>
+    <p>34567</p>
+    <script>
+        console.log(document.querySelectorAll('p'));
+        const [p1, p2, p3] = document.querySelectorAll('p');
+        console.log(p1, p2, p3);
+    </script>
+
+
+    <!-- 函数参数的解构赋值 -->
+    <!-- 有参 -->
+    <script>
+        const array = [1, 8];
+        const add = (arr) => arr[0] + arr[1];
+        console.log(add(array))
+    </script>
+
+    <!-- 无参 -->
+    <script>
+        const tdd = ([x = 0, y = 0]) => { return x + y };
+        console.log(tdd([]))
+    </script>
+
+    <!-- 交换变量值 -->
+    <script>
+        let x3 = 1;
+        let y3 = 2;
+        [x3, y3] = [y3, x3];
+
+        console.log(typeof [x3, y3]);
+        console.log(x3, y3);
+
+        let x5 = 10;
+        let y5 = 20;
+        let z5 = 30;
+        [x5, y5, z5] = [z5, x5, y5];
+        console.log(x5, y5, z5);
+    </script>
+
+
+
+    <!-- 对象结构赋值 -->
+    <!-- 两种方式 -->
+    <script>
+        // 左右键名必须一致
+        const { age, username } = { username: 'alex', age: 18 };
+        console.log(age, username);
+        // const { age: age, username: name } = { name: 'tom', age: 28 };
+        // console.log(age, name);
+    </script>
+
+    <!-- 简便写法，右端只写对象总名称，会自己找 -->
+    <script>
+
+        var xm = {
+            name: "xiaoming",
+            male: "男",
+            age: 18
+        };
+        const { name, male } = xm;
+        console.log(name, male)
+
+    </script>
+    <!-- 默认值 -->
+    <script>
+        const { usname = 'zsan', age2 = 00 } = { usname: 'tom' }
+        console.log(age2, usname);
+    </script>
+    <!-- 已声明变量用于对象解构赋值,需要加括号,防止被认为代码块 -->
+    <script>
+        let sx = 2;
+        ({ sx } = { sx: 19 });
+        // [sx] = [1]; 
+        console.log(sx);
+    </script>
+    <!-- 继承性 -->
+    <script>
+        // const { toString } = {};
+        // console.log({})
+    </script>
+
+    <!-- 应用 -->
+    <script>
+        // 调用对象参数
+        const info = users => console.log(users.sex, users.len);
+        info({ sex: 'male', len: 184 })
+        // 默认
+        const infos = ({ sex = 'none', len = 150 }) => console.log(sex, len);
+        infos({})
+    </script>
+    <!-- 练习 -->
+    <script>
+        let node = {
+            type: 'kele',
+            name: 'f5',
+            loc: {
+                start: ['line', 'column'],
+                end: { line: 198, column: 4 }
+            }
+        }
+        console.log(node.loc.start[0]);
+        console.log(node.loc.end.line);
+    </script>
+
+
+
+    <!-- 字符串解构赋值 -->
+    <!-- 1 数组 -->
+    <script>
+        const [o1, h1, , , l1] = 'hello';
+        console.log(o1, h1, l1);
+    </script>
+    <!-- 2.对象 -->
+    <script>
+        const {
+            0: a0,
+            1: b0,
+            length
+        } = 'hello';
+        console.log(a0, b0, length)
+        console.log('hello'.length)
+    </script>
+
+
+
+    <!-- 数值与布尔值 -->
+    <script>
+        const { ax = 25, toString } = 123;
+        console.log(ax, toString);
+
+        // const { bx = 25, toString } = true;
+        // console.log(bx, toString);
+    </script>
+
+
+
+    <!-- undefined与null -->
+    <script>
+        // const { toString } = undefined;    //报错
+        // const { toString } = null;         //报错
+    </script>
+
+</body>
+
+</html>

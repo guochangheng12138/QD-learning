@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn1">点我去汉码未来</button>
+    <button id="btn2">刷新</button>
+    555555555555555555555555555555555555
+    <script>
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+        btn1.onclick = function () {
+            window.location = 'http://www.hanmaweilao.com';
+        }
+        btn2.onclick = function () {
+            window.location.reload(true);
+        }
+    </script>
+
+
+
+    <div>
+        <form action="">
+            请输入用户名；
+            <input type="text" id="yhm">
+            请输入密码；
+            <input type="text" id="mm">
+            <input type="button" value="提交" id="tj">
+            <!-- form中应使用标准button写法 -->
+            <!-- <button id="tj">提交</button> -->
+        </form>
+        <script>
+            var yhm = document.getElementById('yhm');
+            var mm = document.getElementById('mm');
+            var tj = document.getElementById('tj');
+            tj.onclick = function () {
+                if (yhm.value == '张三' && mm.value == '123456') {
+                    window.location = 'http://www.baidu.com';
+                }
+                else { alert('信息错误') };
+            }
+        </script>
+    </div>
+
+</body>
+
+</html>

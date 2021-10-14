@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const s = new Set();
+        s.add(1);
+        s.add(2);
+        s.add(1);
+        console.log(s)
+
+        s.add(3).add(5).add(78);
+        console.log(s);
+        console.log(s.size);
+
+        console.log(s.has(78));
+        s.delete(2);
+        console.log(s);
+
+
+        s.delete(1745566);
+        console.log(s);
+
+
+        // s.clear();
+        // console.log(s);
+
+
+
+        // for each循环遍历
+        s.forEach(function (value, key, set) {
+            console.log(value, key, set === s);
+            console.log(this);
+        }, document)
+        console.log(s);
+
+
+        console.log(55555555555555555555555555)
+        // set构造函数
+        const x = new Set([1, 2, 1]);
+        console.log(x)
+
+        console.log(new Set('hi'));
+
+
+        function func() {
+            console.log(new Set(arguments))
+        }
+        func(1, 8, 1)
+    </script>
+
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <script>
+        console.log(document.querySelectorAll('p'));
+    </script>
+
+    <script>
+        const d = new Set([1, 2, 1]);
+        console.log(new Set(d));
+        console.log(d);
+    </script>
+
+    <!-- nan===nan -->
+    <script>
+        const st = new Set([NaN, 2, NaN]);
+        console.log(st);
+    </script>
+
+
+
+
+    <script>
+        console.log(55555555555555555555555555)
+
+
+        // <!-- 数组去重 -->
+        const ss = new Set([1, 2, 1]);
+        console.log(ss);
+        console.log(...ss);
+        console.log([...ss]);
+        console.log([...new Set([1, 2, 1])]);
+
+        // 字符串去重
+        const sx = new Set('abbbdjudhb');
+        console.log(sx);
+        console.log([...sx].join(''));
+
+        console.log([...new Set('uashufhdaud')].join(''))
+
+
+        // 存放DOM元素
+        const ser = new Set(document.querySelectorAll('p'));
+        console.log(ser);
+        ser.forEach(function (elem) {
+            elem.style.color = 'red';
+            elem.style.backgroundColor = 'yellow';
+        })
+
+
+
+        // 练习
+        const tc = 'study hard and make and progress every day study';
+        console.log(tc);
+        const tc1 = tc.split(' ');
+        console.log(tc1);
+        const tc2 = new Set(tc1);
+        console.log(tc2);
+        console.log(...tc2);
+
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 规则1    对象.函数（） =》  指向 对象
+        function fn() {
+            console.log(this.a + this.b);
+        }
+        var obj = {
+            a: 66,
+            b: 33,
+            fn: fn
+        }
+        obj.fn()
+
+
+
+
+        var obj1 = {
+            a: 1,
+            b: 2,
+            fn: function () {
+                console.log(this.a + this.b);
+            }
+        };
+        var obj2 = {
+            a: 3,
+            b: 4,
+            fn: obj1.fn
+        }
+        obj2.fn();
+
+
+
+
+
+        function outer() {
+            var a = 11;
+            var b = 22;
+            return {
+                a: 33,
+                b: 44,
+                fn: function () {
+                    console.log(this.a + this.b);
+                }
+            };
+        }
+        outer().fn();
+
+
+
+        function fun() {
+            console.log(this.a + this.b);
+        }
+        var objs = {
+            a: 1,
+            b: 2,
+            c: [{
+                a: 3,
+                b: 4,
+                c: fun
+            }]
+        };
+        var a = 5;
+        objs.c[0].c();
+
+
+        // 规则2    函数（） =》  指向 window
+        var tbj = {
+            a: 1,
+            b: 2,
+            tn: function () {
+                console.log(this.a + this.b);
+            }
+        };
+        var a = 3;
+        var b = 4;
+        var tn = tbj.tn;
+        tn();
+
+
+
+        function fun() {
+            return this.a + this.b;
+        }
+        var a = 1;
+        var b = 2;
+        var tbj = {
+            a: 3,
+            b: fun(),
+            fun: fun
+        };
+        var result = tbj.fun();
+        console.log(result);
+
+
+        // 规则3    数组[下标]()  =》  指向   数组
+        var arr = ['A', 'B', 'C', function () { console.log(this[0]) }]
+        arr[3]();
+
+
+        // function fun() {
+        //     arguments[3]();
+        // }
+        // fun('A', 'B', 'C',
+        //     function () {
+        //         console.log(this[1]);
+        //     }
+        // );
+
+
+
+        // 规则4    IIFE   =》  指向  Window
+        var a = 1;
+        var ibj = {
+            a: 2,
+            fun: (function () {
+                // window
+                var a = this.a;
+                //return 属于ibj的一部分，不属于IIFE，适用于规则1
+                return function () {
+                    // 1+2
+                    console.log(a + this.a)
+                }
+            })()
+        };
+        ibj.fun();
+
+
+        // 规则5   定时器延时器调用 =》指向  window
+        var dbj = {
+            a: 1,
+            b: 2,
+            fun: function () {
+                console.log(this.a + this.b);
+            }
+        }
+        var a = 3;
+        var b = 4;
+        setTimeout(dbj.fun, 2000);
+
+        setTimeout(function () { dbj.fun(); }, 2000);
+    </script>
+
+
+
+    <!-- 规则6     事件处理函数  =》   指向 DOM元素 -->
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            margin-right: 10px;
+        }
+
+        #box4 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            margin-right: 10px;
+            background-color: blue;
+        }
+    </style>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3">
+        <div id="box4"></div>
+    </div>
+    <script>
+        function settored() {
+            this.style.backgroundColor = 'red';
+        }
+        var box1 = document.getElementById('box1');
+        var box2 = document.getElementById('box2');
+        var box3 = document.getElementById('box3');
+        var box4 = document.getElementById('box4');
+        // box1.onclick = settored;
+        // box2.onclick = settored;
+        // box3.onclick = settored;
+        // box4.onclick = settored;
+        // document.documentElement.onclick = settored;
+    </script>
+
+    <script>
+        function settoyellow() {
+            var self = this;
+            setTimeout(function () { self.style.backgroundColor = 'yellow' }, 2000);
+        }
+        box1.onclick = settoyellow;
+        box2.onclick = settoyellow;
+        box3.onclick = settoyellow;
+        box4.onclick = settoyellow;
+    </script>
+
+
+
+
+</body>
+
+</html>

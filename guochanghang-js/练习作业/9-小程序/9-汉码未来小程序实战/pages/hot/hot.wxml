@@ -1,0 +1,35 @@
+<!--pages/hot/hot.wxml-->
+<view class="tabs">
+  <view wx:for="{{rankTypes}}" wx:key="type" data-type="{{item.type}}" bindtap="handleTabChange"
+    class="tab {{rankType===item.type?'active':''}}">
+    {{item.title}}
+    <view wx:if="{{rankType===item.type}}" class="active-bar"></view>
+  </view>
+</view>
+
+<!-- ////////////////////////////////////// -->
+<view class="time">
+  <view wx:for="{{rankPeriods}}" data-type="{{item.value}}" wx:key="value" bindtap="handlePeriodChange"
+    class="period {{rankPeriod===item.value?'period-active':''}}">
+    {{item.title}}
+  </view>
+</view>
+
+<view class="list">
+  <view class="item" wx:for="{{currentList}}" wx:key="title">
+    <image class="item-image" src="{{item.imgUrl}}"></image>
+    <view class="item.title">
+      <view class="item-title-inner">
+        {{item.title}}
+      </view>
+    </view>
+    <view class="item-number">
+      <image class="item-number-img" src="../../resources/first.png" wx:if="{{index===0}}"></image>
+      <image class="item-number-img" src="../../resources/second.png" wx:elif="{{index===1}}"></image>
+      <image class="item-number-img" src="../../resources/third.png" wx:elif="{{index===2}}"></image>
+      <view wx:else class="item-number-common">
+        {{index+1}}
+      </view>
+    </view>
+  </view>
+</view>

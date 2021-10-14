@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,user-scalable=no, maxinum-scale=1, mininum-scale=1">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            height: 2000px;
+        }
+    </style>
+    <script>
+        var a = 3;
+        console.log(window.a);
+        console.log(a);
+        console.log(window.hasOwnProperty('a'));
+        console.log(window.hasOwnProperty == hasOwnProperty);
+        // console.log(hasOwnProperty('a'));
+        console.log('窗口内高', window.innerHeight);
+        console.log('窗口内宽，包含滚动条', window.innerWidth);
+        console.log('窗口内宽，不包含滚动条', document.documentElement.clientWidth);
+    </script>
+
+
+    <script>
+        window.onresize = function () {
+            console.log('尺寸变化' + document.documentElement.clientHeight, document.documentElement.clientWidth);
+        }
+    </script>
+
+    <script>
+        window.onscroll = function () {
+            console.log('窗口卷动', window.scrollY)
+        }
+    </script>
+
+</body>
+
+</html>

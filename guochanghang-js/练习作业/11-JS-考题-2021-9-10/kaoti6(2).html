@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button id="btn">点击抛送小红小明小欣</button>
+    </div>
+    <script>
+        var data = {
+            xiaohong: {
+                xingming: "xiaohong",
+                age: 18,
+                sex: 'female'
+            },
+            xiaoming: {
+                xingming: "xiaoming",
+                age: 20,
+                sex: 'male'
+            },
+            xiaoxin: {
+                xingming: "xiaoxin",
+                age: 16,
+                sex: 'female'
+            },
+        };
+
+
+
+        const url = 'http://webapi.hanmaweilai.com/api/v1/postData'
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState !== 4) return;
+                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                    console.log(xhr.responseText);
+                    console.log(typeof xhr.responseText);
+
+                    const strToObj = JSON.parse(xhr.responseText)
+                    console.log(strToObj)
+                    console.log(strToObj.data.age);
+
+                }
+            };
+
+            xhr.open('POST', url, true)
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            // xhr.send('username=xiaohong&age=18')
+            xhr.send('xiaohong={username=xiaohong&age=18&sex=female}&xiaoming={username=xiaoming&age=20&sex=male}&xiaoxin={username=xiaoxin&age=16&sex=female}')
+        });
+
+
+
+    </script>
+</body>
+
+</html>

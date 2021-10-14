@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #box {
+        width: 100px;
+        height: 100px;
+        border: solid;
+        background-color: sandybrown;
+    }
+</style>
+
+<body>
+    <div id="box">
+    </div>
+    <form id="myform">
+        <div>
+            姓名<input type="text" name="namefield">
+        </div>
+        <div>
+            年龄: <input type="text" name="agefield">
+        </div>
+        <div>
+            <input type="submit" name="subfield">
+        </div>
+    </form>
+
+    <script>
+        // var obox = document.getElementById('box')
+        // obox.onclick = function () {
+        //     alert('你好')
+        // }
+        // obox.ondblclick = function () {
+        //     alert('双击')
+        // }
+        // obox.onmousedown = function () {
+        //     alert('按下')
+        // }
+        // obox.onmouseup = function () {
+        //     alert('松开')
+        // }
+        // obox.onmouseenter = function () {
+        //     console.log('进去')
+        // }
+        // obox.onmouseleave = function () {
+        //     console.log('出来')
+        // }
+
+
+
+        // var namefield = document.getElementById('namefield');
+        // namefield.onkeydown = function () {
+        //     console.log('按下');
+        // }
+        // namefield.onpressdown = function () {
+        //     console.log('按下2');
+        // }
+        // namefield.onkeyup = function () {
+        //     console.log('放开');
+        // }
+
+
+        var myform = document.getElementById('myform');
+        var namefield = myform.namefield;
+        namefield.onchange = function () {
+            console.log('你修改了名字');
+        }
+        namefield.oninput = function () {
+            console.log('你正在修改名字');
+        }
+        namefield.onfocus = function () {
+            console.log('名字得到焦点');
+        }
+        namefield.onblur = function () {
+            console.log('名字失去焦点');
+        }
+
+
+        myform.onsubmit = function () {
+            alert('提交');
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

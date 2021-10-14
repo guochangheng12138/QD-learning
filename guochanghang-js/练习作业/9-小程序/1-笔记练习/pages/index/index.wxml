@@ -1,0 +1,65 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+
+
+  <!-- 练习 -->
+
+  <!-- 数据绑定 -->
+  <view>{{mess}}</view>
+  <view id="item-{{id}}"> </view>
+  <view wx:if="{{condition}}"></view>
+  <!-- 运算 -->
+  <view hidden="{{flag ? true : false}}">Hidden</view>
+  <view>{{a+b}}+{{c}}</view>
+  <view>{{"hello"+name}}</view>
+  <view>{{object.key}}{{arr[0]}}</view>
+
+
+  <!-- 条件渲染 -->
+  <view wx:if="{{condition}}">TTTT</view>
+  <view wx:if="{{length>5}}">1</view>
+  <view wx:elif="{{length>2}}">2</view>
+  <view wx:else>3</view>
+
+  <!-- 列表渲染 -->
+  <view wx:for="{{brr}}">
+    {{index}}:{{item.mess1}}
+  </view>
+  <!-- 改索引名字与变量名 -->
+  <view wx:for="{{brr}}" wx:for-index="idx" wx:for-item="ddd">
+    {{idx}}:{{ddd.mess1}}
+  </view>
+
+  <view wx:for="{{objectcrr}}" wx:key="unique" style="display: block">
+    {{item.unique}}
+  </view>
+  <switch wx:for="{{numcrr}}" wx:key="*this" style="display: block">
+    {{item}}
+  </switch>
+
+  <navigator url="/pages/logs/logs" open-type="switchTab">
+    <view>切换tap</view>
+  </navigator>
+
+
+</view>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var n = 1;
+        // do {
+        //     console.log(n);
+        //     n++;
+        // } while (n < 3);
+
+        // do {
+        //     var dx = parseInt(Math.random() * 9) - 4;
+        //     var dy = parseInt(Math.random() * 9) - 4;
+        // }
+        // while (dx == 0 && dy == 0);
+        // console.log(dx, dy)
+
+        // 猜字游戏
+        // var an = parseInt(Math.random() * 98) + 2;
+        // var min = 1;
+        // var max = 100;
+        // while (true) {
+        //     var n = Number(prompt('请猜测数字' + min + '~' + max + '之间'));
+        //     if ((n <= min || n >= max)) {
+        //         alert("不在范围");
+        //         continue;
+        //     }
+        //     if (n > an) {
+        //         alert('数字过大');
+        //         max = n;
+        //     }
+        //     else if (n < an) {
+        //         alert('数字过小');
+        //         min = n;
+        //     }
+        //     else {
+        //         alert('猜对了');
+        //         break;
+        //     }
+        // }
+
+        // for改while
+        // var i = 0, sum = 0;
+        // while (i <= 100) {
+        //     if (i % 2 != 0) {
+        //         sum += i;
+        //     }
+        //     i++;
+        // }
+        // console.log(sum);
+
+
+
+        // 年化收益
+        // var year = 0, sum = 1000;
+        // while (sum < 2000) {
+        //     sum = sum * Math.pow(1.05, year);
+        //     year++;
+        // }
+        // console.log(year);
+        // 方法二
+        // var year = 0, sum = 1000;
+        // while (true) {
+        //     if (sum < 2000) {
+        //         sum = sum * Math.pow(1.05, year);
+        //         year++;
+        //     }
+        //     else {
+        //         break;
+        //     }
+        // }
+        // console.log(year);
+        // console.log(sum);
+
+        var i = 1, sum = 0;
+        while (true) {
+            if (i <= 100) {
+                sum += i;
+                i++;
+            }
+            else {
+                break;
+            }
+
+        }
+        console.log(sum);
+    </script>
+</body>
+
+</html>

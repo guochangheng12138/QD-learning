@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .ztm {
+            width: 200px;
+            border: solid;
+        }
+
+        .ztm li {
+            border: solid;
+        }
+
+        .ytm {
+            width: 500px;
+            border: solid;
+        }
+
+        .ytm li {
+            border: solid;
+            display: none;
+        }
+
+        .ztm li div {
+            border: solid;
+            width: 100px;
+        }
+    </style>
+    <div>
+        <ul class="ztm" id="ztm">
+            <li data-n="港澳台">
+                <div>港澳台</div>
+            </li>
+            <li data-n="日本">
+                <div>日本</div>
+            </li>
+            <li data-n="泰新马">
+                <div>泰新马</div>
+            </li>
+            <li data-n="欧洲">
+                <div>欧洲</div>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <ul class="ytm" id="ytm">
+            <li data-n="港澳台" class="ytmcd">香港 澳门 台北 高雄 香港迪士尼 香港海洋公园 交通接驳 澳门塔 新濠天地水舞间 澳门豪华自助 台北101 台湾美食</li>
+            <li data-n="日本" class="ytmcd">东京 大阪 冲绳 北海道 札幌 京都 名古屋 福冈 长崎 鹿儿岛 JR Pass 米其林餐厅 东京迪士尼 大阪环球影城 冲绳一日游 City Walk
+                西瓜卡 京都日游 和服体验
+                包车服务</li>
+            <li data-n="泰新马" class="ytmcd">马尔代夫 斯里兰卡 印度 尼泊尔 格鲁吉亚阿塞拜疆 亚美尼亚</li>
+            <li data-n="欧洲" class="ytmcd">美国 加拿大 墨西哥 巴西 阿根廷 智利 秘鲁
+                玻利维亚 洛杉矶 纽约 拉斯维加斯 旧金山 圣地亚哥芝加哥 西雅图 华盛顿 奥兰多 夏威夷
+                塞班岛 关岛 环球影城 迪士尼 演出票
+                尼亚加拉大瀑布 帝国大厦 奥特莱斯 黄石国家公园
+                纽约大都会博物馆 美国大峡谷西峡
+                拉斯维加斯摩天轮</li>
+        </ul>
+    </div>
+    <script>
+        var ztm = document.getElementById('ztm');
+        // var ztmcd = document.querySelectorAll('ztm.ztmcd');
+        var contentparts = document.querySelectorAll('.ytmcd');
+
+        ztm.onmouseover =
+            function (e) {
+                // if (e.target.tagName.toLowerCase() == 'li') {
+                var n = e.target.getAttribute('data-n');
+                var contentpart = document.querySelector('.ytmcd[data-n=' + n + ']')
+                // contentpart.style.backgroundColor = 'red';
+                contentpart.style.display = 'block';
+                e.target.style.backgroundColor = 'rgba(0,0,0,0.6)';
+                // }
+            }
+        ztm.onmouseout =
+            function (e) {
+                // if (e.target.tagName.toLowerCase() == 'li') {
+                var n = e.target.getAttribute('data-n');
+                var contentpart = document.querySelector('.ytmcd[data-n=' + n + ']')
+                // contentpart.style.backgroundColor = 'red';
+                contentpart.style.display = 'none';
+                e.target.style.backgroundColor = 'rgba(0,0,0,0.4)';
+                // }
+            }
+    </script>
+</body>
+
+</html>

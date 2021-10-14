@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var arr = [1, 4, 6, 4, 8, 5];
+        // var max = arr[0];
+        // var min = arr[0];
+        // for (let index = 0; index < arr.length; index++) {
+        //     if (arr[index] > max) {
+        //         max = arr[index];
+        //     }
+        //     else if (arr[index] < min) {
+        //         min = arr[index];
+        //     }
+        // }
+        // console.log(min, max);
+
+
+        // var brr = [1, 2, '炸弹', 3, 4, '炸弹', 5];
+        // var sum = 0;
+        // for (var i = 0; i < brr.length; i++) {
+        //     if (brr[i] == '炸弹') {
+        //         continue;
+        //     }
+        //     else {
+        //         sum += brr[i];
+        //     }
+        // }
+        // console.log(sum);
+
+
+
+        // var crr = ['有效', '无效', '有效', '无效', '无效', '有效',]
+        // for (let index = 0; index < crr.length; index++) {
+        //     if (crr[index] == '有效') {
+        //         continue;
+        //     }
+        //     else {
+        //         crr.splice(index, 1);
+        //         index--;
+        //     }
+        // }
+        // console.log(crr);
+
+        // 数组去重
+        // var arr = [1, 4, 6, 5, 5, 2, 8, 2, 1, 5, 1, 2, 1, 2, 8];
+        // var brr = [];
+        // for (i = 0; i < arr.length; i++) {
+        //     if (!brr.includes(arr[i])) {
+        //         brr.push(arr[i]);
+        //     }
+        // }
+        // console.log(brr);
+
+        // 随机样本
+        // var arr = [8, 7, 1, 16, 10, 5, 89, 36];
+        // var brr = [];
+        // for (var i = 0; i < 3; i++) {
+        //     var n = parseInt(Math.random() * arr.length);
+        //     brr.push(arr[n]);
+        //     arr.splice(n, 1);
+        // }
+        // console.log(brr);
+
+        // 冒泡排序
+        var arr = [6, 2, 9, 3, 8,];
+        for (var i = 1; i < arr.length; i++) {
+            for (var j = arr.length - 1; j >= i; j--) {
+                if (arr[j] < arr[j - 1]) {
+                    var temp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = temp;
+                }
+            }
+        }
+        console.log(arr);
+    </script>
+</body>
+
+</html>

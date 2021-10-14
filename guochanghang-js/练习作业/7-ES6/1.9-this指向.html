@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'   //严格模式
+        const st = function () {
+            console.log(this)   //this指向undefined
+        };
+    </script>
+
+
+    <!-- 箭头函数无自己this指向，遵循作用域，且谁调用就指向谁 -->
+    <style>
+        body {
+            padding: 50px 0 0 250px;
+            font-size: 30px;
+        }
+
+        #btn {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+
+    <button id="btn">开始</button>
+    <span id="result">0</span>
+
+    <script>
+        const btn = document.getElementById('btn');
+        const result = document.getElementById('result');
+
+        const timer = {
+            time: 0,
+            start: function () {
+                btn.addEventListener(
+                    'click', () => {
+                        setInterval(
+                            () => {
+                                console.log(this);
+                                this.time++;
+                                result.innerHTML = this.time;
+                            }, 1000
+                        )
+                    }, false
+                );
+            }
+        }
+        timer.start();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+/**index.wxss**/
+.header input{
+  border: solid 2px;
+  text-align: center;
+  width: 600rpx;
+}
+.header{
+  position: relative;
+}
+#f1{
+  position: absolute;
+  top: 9rpx;
+}
+#f2{
+  position: absolute;
+  top: 9rpx;
+  left: 700rpx;
+}
+text{
+  display: block;
+  border: solid;
+  height: 200rpx;
+  width: 700rpx;
+  background-color: rgb(17, 140, 223);
+}
+.swiper{
+  width: 95%;
+  height: 300rpx;
+  margin: auto;
+}
+.swiper-item{
+  text-align: center;
+}
+.swiper-image{
+  width: 100%;
+  height: 100%;
+  margin-left: 20rpx;
+}

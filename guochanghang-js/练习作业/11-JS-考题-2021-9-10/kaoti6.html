@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<body>
+    <div>
+        <button id="btn">点击抛送小红小明小欣</button>
+        <div>
+            <p>平均年龄为：</p>
+            <div id="pjz"></div>
+
+        </div>
+    </div>
+    <script>
+        var btn = document.getElementById('btn');
+        var pjz = document.getElementById('pjz');
+
+        var arr = [
+            {
+                xingming: "xiaohong",
+                age: 18,
+                sex: 'female'
+            },
+            {
+                xingming: "xiaoming",
+                age: 20,
+                sex: 'male'
+            },
+            {
+                xingming: "xiaoxin",
+                age: 16,
+                sex: 'female'
+            },
+        ];
+        console.log(arr);
+
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const url1 = 'http://webapi.hanmaweilai.com/api/v1/postData';
+            const url2 = 'http://webapi.hanmaweilai.com/api/v1/getData';
+            $.ajax({
+                async: false,
+                url: url1,
+                type: "POST",
+                data: { idx: arr },
+                success: function (data) {
+                    console.log(data);
+                    var brr = data.data.idx;
+                    console.log(brr);
+                    var sum = 0;
+                    for (var n = 0; n <= brr.length - 1; n++) {
+                        sum += Number(brr[n].age);
+                    };
+                    console.log(sum / 3);
+                    pjz.innerHTML = sum / 3;
+
+                },
+                error: function () {
+                    console.log('error')
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

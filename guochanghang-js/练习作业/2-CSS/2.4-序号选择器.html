@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* .box1 p:first-child {
+            font-size: 55px;
+        }
+
+        .box1 p:last-child {
+            color: rgb(224, 169, 17);
+        }
+
+        .box1 p:nth-child(3) {
+            font-size: 65px;
+        }
+
+        .box1 p:nth-child(3n+2) {
+            background-color: orchid;
+
+        } */
+    .box1 p:nth-child(odd) {
+        font-size: 55px;
+
+    }
+
+    .box1 p:nth-child(even) {
+        font-size: 35px;
+
+    }
+
+    .box1 p:nth-of-type(3) {
+        background-color: palegreen;
+    }
+</style>
+
+<body>
+    <div>
+        <div class="box1">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <p>4</p>
+            <p>5</p>
+            <p>6</p>
+            <p>7</p>
+            <p>8</p>
+        </div>
+    </div>
+</body>
+
+</html>

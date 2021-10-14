@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(name1, age1) {
+                this.name0 = name1;
+                this.age = age1
+            }
+            speak() {
+                console.log('hanmaweilai');
+            }
+        }
+
+        const zhangsan = new Person('zsan', 18);
+        console.log(zhangsan.name0);
+        console.log(zhangsan.age);
+        console.log(zhangsan.speak);
+
+        const lisi = new Person('lisi', 27);
+
+        console.log(zhangsan.speak === lisi.speak);
+
+        // Person.prototype.run = function () { };
+        console.log(typeof Person);
+        console.log(Person.prototype.speak)
+
+
+
+        // 两种定义形式
+        class Person1 {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age
+            }
+        }
+
+        const Person2 = class {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age
+            }
+        }
+        new Person2();
+
+        // 立即执行
+        new (class {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age
+            }
+        })();
+        new Person()
+
+
+        // 实例属性
+        class Person3 {
+            age = 0;
+            sex = 'male';
+            constructor(name, sex) {
+                this.name = name;
+                this.age = 18;
+                this.sex = sex;
+            }
+            getSex = function () {
+                return ths.sex;
+            }
+            // speak = () => this.age = 20;
+            speak() {
+                this.age = 20;
+            }
+        }
+        const p = new Person3('wangwu');
+        console.log(p.name);
+        console.log(p.age);
+        console.log(p.sex);
+
+        console.log(p.speak);
+        console.log(p.getSex);
+
+
+        // 静态方法  属于类
+        class Person4 {
+            constructor(name) {
+                this.name = name;
+            }
+            speak() {
+                console.log('spa');
+                console.log(this);        //指向实例
+            }
+            static speak() {
+                console.log('hhhhhhh');
+                console.log(this);      //指向类
+            }
+        }
+        const p5 = new Person4('tom');
+        p5.speak()
+        Person4.speak()
+
+
+        // 静态属性 属于类
+        class Person5 {
+            version = '2.0';
+            constructor(name) {
+                this.name = name;
+            }
+            static version = '1.0'     //写法可能存在兼容性问题
+            static getVersion() {     //用静态方法代替
+                return '1.0'
+            }
+        }
+        const p6 = new Person5('lucy');
+        console.log(p6.name);
+        console.log(p6.version);
+        console.log(Person5.version);
+        console.log(Person5.getVersion());
+
+
+        // 练习???????????????????????????????????
+        class People {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+                // this.say = function () {
+                //     console.log(this.name, this.age)//???????????????
+                // }
+            }
+            say() {
+                console.log(this.name, this.age)//???????????????
+            }
+            static run() {
+                return console.log('run');
+            }
+            static intro() {
+                return 'gggggggggggggggggun'
+            }
+            static show() {
+                return console.log('runnnnnnnnnnnnn');
+            }
+        }
+        const sp = new People('lili', 28);
+        console.log(sp.name);
+        console.log(sp.age);
+        sp.say();
+        People.run();
+        console.log(People.intro());
+        People.show();
+    </script>
+</body>
+
+</html>

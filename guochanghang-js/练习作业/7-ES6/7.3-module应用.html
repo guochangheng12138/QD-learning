@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="dv" style="border: 1px solid red;height: 100px;width: 100px;"></div>
+    <input type="button" value="点击" id="bt">
+    <script type="module">
+        import DOC from './7.3-index.js';
+        var el = document.getElementById('bt')
+        var dv = document.getElementById('dv')
+        el.onclick = function () {
+            var doc = new DOC();
+            doc.changeBig(dv);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // iterator
+        const it = [1, 2][Symbol.iterator]();
+        console.log(it);
+        console.log(it.next());
+        console.log(it.next());
+        console.log(it.next());
+        console.log(it.next());
+        console.log(it.next());
+
+        // for..of
+        const arr = [10, 20, 30];
+        for (const item of arr) {
+            if (item == 2) {
+                continue;
+            }
+            console.log(item);
+        }
+
+
+
+        console.log(arr.keys());
+        for (const key of arr.keys()) {
+            console.log(key)
+        }
+
+
+
+        for (const value of arr.values()) {
+            console.log(value)
+        }
+        for (const value of arr) {
+            console.log(value)
+        }
+
+
+        for (const entry of arr.entries()) {
+            console.log(entry)
+        }
+
+        // 练习!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        const brr = ['h', 'a', 'n', 'm', 'a'];
+        for (const [x, y] of brr.entries()) {
+            if (y == 'a') {
+                console.log(y);
+                brr[x] = y.toLocaleUpperCase();
+                break
+            }
+        }
+        console.log(brr);
+
+        for (let i = 0; i < brr.length; i++) {
+            if (brr[i].value = 'n') {
+                brr[i] = brr[i].toLocaleUpperCase();
+            }
+        }
+        console.log(brr)
+
+
+        for (const item1 of 'hi') {
+            console.log(item1);
+        }
+
+        for (const item2 of new Set([1, 2])) {
+            console.log(item2);
+        }
+
+
+    </script>
+</body>
+
+</html>

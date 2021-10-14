@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="module">
+        import { set, get, remove } from './8.2-cookie.js';
+        set('username', '张三');
+        set('age', '18');
+        set('sex', 'male', {
+            maxAge: 30 * 24 * 3600
+        });
+
+        // remove('username');
+        // remove('用户名');
+
+        console.log(get('username'));
+        console.log(get('age'));
+        console.log(get('sex'));
+    </script>
+</body>
+
+</html>

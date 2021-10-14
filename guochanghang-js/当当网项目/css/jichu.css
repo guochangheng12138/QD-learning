@@ -1,0 +1,17 @@
+.center{
+margin: 0 auto;
+}
+body{
+    margin: 0;
+}
+ul,li{
+    margin: 0;
+    padding: 0;
+}
+a {
+	text-decoration: none;
+    padding:0;
+}
+li{
+    list-style: none;
+}

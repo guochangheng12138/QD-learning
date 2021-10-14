@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var a = Number(prompt("底边长度"));
+        // var b = Number(prompt("高长度"));
+        // var c = a * b / 2;
+        // alert('三角形面积为' + c);
+
+        var a = 0.1;
+        var b = 0.2;
+        var c = a + b;
+        console.log(c.toFixed(2));
+
+
+        console.log(Math.pow(3, 2));
+        console.log(Number(Math.sqrt(381).toFixed(3)));
+
+        console.log(Math.ceil(2.4));
+        console.log(Math.floor(2.4));
+        console.log(Math.ceil(-2.4));
+
+
+
+        console.log(8 < 9);
+        console.log(8 <= 9);
+
+        console.log(isNaN(null));
+        console.log(isNaN(10));
+        console.log(isNaN('字符'));
+        console.log(isNaN(undefined));
+
+
+
+        var x = NaN, y = undefined, z = 1;
+        console.log(x || y || z);
+        console.log(1 || '0' || 33);
+        console.log(!undefined || !0);
+
+
+
+
+        var aa = 3;
+        var bb = aa++;
+        console.log(bb);
+        console.log(aa);
+        var aa = 3;
+        var bb = ++aa;
+        console.log(bb);
+        console.log(aa);
+
+
+        var a1 = 5;
+        b1 = 7;
+        c = a1;
+        a1 = b1;
+        b1 = c;
+        console.log(a1, b1);
+
+        var a2 = 4;
+        var b2 = 5;
+        // console.log(a2++);
+        // console.log(--b2);
+        var sum = (a2++) + (--b2);
+        console.log(sum);
+        console.log(a2);
+        console.log(b2);
+        console.log(a2++);
+        console.log(--b2);
+
+        // var b3 = 5;
+        // console.log(--b3);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+        var a = 0;
+        setInterval(
+            function () {
+                console.log(++a);
+            }, 3000
+        )
+    </script> -->
+
+    <h1 id="info">0</h1>
+    <button id="btn1">开始</button>
+    <button id="btn2">暂停</button>
+    <script>
+        var oinfo = document.getElementById('info');
+        var obtn1 = document.getElementById('btn1');
+        var obtn2 = document.getElementById('btn2');
+        var a = 0;
+        var timer;
+        obtn1.onclick = function () {
+            // clearInterval(timer);
+            timer = setInterval(function () {
+                oinfo.innerText = ++a;
+            }, 1000)
+        }
+        obtn2.onclick = function () {
+            clearInterval(timer)
+        }
+    </script>
+</body>
+
+</html>

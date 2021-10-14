@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var a = new Number(123);
+        // var b = new String('汉码未来');
+        // var c = new Boolean(true);
+        // console.log(a);
+        // console.log(typeof a);
+        // console.log(typeof b);
+        // console.log(typeof c);
+
+
+        // var res = Number(prompt('請輸入數字'));
+        // var nres;
+        // if (res >= 20) {
+        //     nres = Math.ceil(res);
+        // }
+        // else {
+        //     nres = Math.floor(res);
+        // }
+        // alert(nres);
+
+
+        // s生成随机数组并排序
+        var arr = [];
+        for (var i = 1; i <= 10; i++) {
+            var sjs = parseInt(Math.random() * 100);
+            arr.push(sjs);
+        }
+        console.log(arr);
+
+        for (i = 0; i <= 9; i++) {
+            for (j = 9; j >= i; j--) {
+                if (arr[j] > arr[j - 1]) {
+                    var m = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = m;
+                }
+            }
+        }
+        console.log(arr);
+        console.log("这组数最大值是：" + arr[0] + ',最小值是' + arr[9]);
+
+
+        var input = Number(prompt('请输入数字'));
+        var cjs = parseInt(Math.random() * 100);
+        while (input != cjs) {
+            if (input < cjs) {
+                alert('过小')
+            }
+            else {
+                alert('过大')
+            };
+            input = Number(prompt('请输入数字'));
+        }
+        while (input == cjs) {
+            alert('对了')
+        };
+    </script>
+</body>
+
+</html>

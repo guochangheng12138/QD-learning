@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var a = Number(prompt("请输入数字"));
+        // if (a < 1 || a > 1000) {
+        //     alert("数字不合法")
+        // }
+        // else {
+        //     if (a % 2 == 0 || a % 3 == 0) {
+        //         alert('可以整出')
+        //     }
+        //     else {
+        //         alert('不可以整除')
+        //     }
+        // };
+        // 判断自然数是否为奇数
+        // var b = Number(prompt("请输入数字"));
+        // if (b < 0) {
+        //     alert("数字不合法")
+        // }
+        // else if (b / (Math.floor(b)) != 1) {
+        //     alert("数字不为整数")
+        // }
+        // else {
+        //     if (b % 2 == 0) {
+        //         alert('偶数')
+        //     }
+        //     else {
+        //         alert('奇数')
+        //     }
+        // };
+        // 体重是否标准
+        var a = prompt("请输入性别");
+        var b = prompt("请输入身高，厘米");
+        var c = prompt("请输入体重，kg");
+        if (a == "男") {
+            if (((b - 80) * 0.7) * 1.05 < c) {
+                alert("体重过重")
+            }
+            else if (((b - 80) * 0.7 * 0.95) > c) {
+                alert("体重过轻")
+            }
+            else {
+                alert("体重非常棒")
+            }
+        }
+        else if (a == "女") {
+            if (((b - 70) * 0.6) * 1.05 < c) {
+                alert("体重过重")
+            }
+            else if (((b - 70) * 0.6 * 0.95) > c) {
+                alert("体重过轻")
+            }
+            else {
+                alert("体重非常棒")
+            }
+        }
+        else {
+            alert('你是人妖吗')
+        };
+    </script>
+</body>
+
+</html>

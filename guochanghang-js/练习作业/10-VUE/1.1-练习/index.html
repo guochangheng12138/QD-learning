@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入在线框架 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<!-- 获取鼠标移动坐标 -->
+<style>
+    .dvs {
+        border: 1px solid red;
+        width: 300px;
+        height: 150px;
+    }
+
+    /* 动态绑定css样式 */
+    span {
+        background-color: red;
+        display: inline-block;
+        padding: 10px;
+        color: #fff;
+        margin: 10px 0;
+    }
+
+    .changeColorA span {
+        background-color: green;
+    }
+
+    /* 计算属性的方式传递class */
+    .changeColor span {
+        background-color: green;
+    }
+
+    .changeLength span:after {
+        content: "length";
+        margin-left: 10px;
+    }
+</style>
+
+<body>
+    <!-- vue容器 -->
+    <div id="vue-app">
+        <!-- 数据与方法 -->
+        <h1>{{name}}</h1>
+        <p>{{greet("morning")}}</p>
+
+        <!-- 属性绑定 -->
+        <a v-bind:href="website">百度</a><br>
+        <input type="text" v-bind:value="website">
+        <p v-html="websiteTag"></p>
+
+        <!-- 鼠标事件 -->
+        <p>{{age}}</p>
+        <button v-on:click="add">加一岁</button>
+        <button @click="sec">减一岁</button>
+        <button v-on:dblclick="add">双击加一岁</button>
+        <button @dblclick="sec">双击减一岁</button>
+        <!-- 鼠标事件加入参数 -->
+        <button v-on:click="add2(10)">加10岁</button>
+        <button @click="sec2(10)">减10岁</button>
+        <!-- 获取鼠标移动坐标 -->
+        <div class="dvs" @mousemove="updateXY">
+            {{x}},{{y}}<br>
+            <!-- 阻止冒泡 -->
+            <span @mousemove="stopmoving">STOP</span><br>
+            <span @mousemove.stop="">STOP2</span><br>
+        </div>
+        <!-- 一次事件类型 -->
+        <div class="dvs" @mousemove.once="updateXY">
+            {{x}},{{y}}<br>
+        </div>
+
+        <!-- 超链接弹出信息但阻止跳转 -->
+        <a @click.prevent="alert" href="http://www.baidu.com">STEP</a>
+        <!-- 超链接弹出信息并跳转 -->
+        <a @click="alert" href="http://www.baidu.com">STEP2</a>
+
+        <!-- 键盘事件 -->
+        <h2>键盘事件</h2>
+        <label>姓名</label>
+        <input type="text" @keyup="logName" />
+        <label>年龄</label>
+        <input type="text" @keyup.enter="logAge" />
+        <label>电话</label>
+        <input type="text" @keyup.alt.enter="logTel" />
+
+        <!-- 双向数据绑定 -->
+        <h2>双向数据绑定</h2>
+        <label>姓名</label>
+        <input type="text" ref="name" @change="changeName" />
+        <span>{{name}}</span>
+        <label>年龄</label>
+        <input type="text" ref="age" @change="changeAge" />
+        <span>{{age}}</span>
+        <!-- 第二种方法,无需创建changgexxxx -->
+        <h2>双向数据绑定</h2>
+        <label>姓名</label>
+        <input type="text" ref="name" v-model="name" />
+        <span>{{name}}</span>
+        <label>年龄</label>
+        <input type="text" ref="age" v-model="age" />
+        <span>{{age}}</span>
+
+        <!-- 计算属性 -->
+        <h2>计算属性</h2>
+        <button @click="a++">Add to A</button>
+        <button @click="b++">Add to B</button><br>
+        <div>A-{{a}}</div>
+        <div>B-{{b}}</div>
+        <div>Age+A={{addToA()}}</div>
+        <div>Age+B={{addToB()}}</div>
+
+        <!-- computed减少计算性能消耗 -->
+        <h2> computed减少计算性能消耗</h2>
+        <button @click="a++">Add to A</button>
+        <button @click="b++">Add to B</button><br>
+        <div>A-{{a}}</div>
+        <div>B-{{b}}</div>
+        <div>Age+A={{addToA2}}</div>
+        <div>Age+B={{addToB2}}</div>
+
+        <!-- 动态绑定css样式 -->
+        <h2>动态绑定css样式</h2>
+        <div @click="changeColor=!changeColor" :class="{changeColorA:changeColor}">
+            <span>HHHHHHH</span>
+        </div>
+        <!-- 计算属性的方式传递class -->
+        <h2> 计算属性的方式传递class</h2>
+        <button @click="changeColor=!changeColor">changeColor</button>
+        <button @click="changeLength=!changeLength">changeLength</button>
+        <div :class="compClasses">
+            <span>SSSSSSSSSSSSSSSSSS</span>
+        </div>
+
+        <!-- <v-if></v-if> -->
+        <h2>v-if指令</h2>
+        <button @click="error=!error">error</button>
+        <button @click="success=!success">success</button><br>
+        <span v-if="error">网络连接失败</span>
+        <span v-if="success">网络连接成功</span>
+        <span v-show="error">网络连接失败</span>
+        <span v-show="success">网络连接成功</span>
+
+        <!-- <v-for></v-for> -->
+        <h2>v-for指令</h2>
+        <ul>
+            <li v-for="character in characters">{{character}}</li>
+        </ul>
+        </hr />
+        <div v-for="user in users">
+            <span>{{user.name}}</span>--<span>{{user.age}}</span>
+        </div>
+        </hr />
+        <div v-for="(user,index) in users">
+            <span>{{index}}--{{user.name}}</span>--<span>{{user.age}}</span>
+        </div>
+        </hr />
+        <template v-for='user in users'>
+            <span>{{user.name}}</span>--<span>{{user.age}}</span>
+        </template>
+        </hr />
+        <template v-for='user in users'>
+            <div v-for="(key,val) in users">
+                <span>{{key}}</span>--<span>{{val}}</span>
+            </div>
+        </template>
+        </hr />
+
+
+
+
+    </div>
+
+
+
+    <!-- 放最后引入js -->
+    <script src="./app.js"></script>
+</body>

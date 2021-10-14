@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 名称与值
+        document.cookie = 'username=zs';
+        document.cookie = 'age=18';
+        console.log(document.cookie);
+
+        // 非英文编码
+        document.cookie = `username2=${encodeURIComponent('张三')}`;
+
+        // 失效日期
+        document.cookie = `expires=${new Date('2100-1-01 00:00:00')}`;
+
+        document.cookie = `username=zs;max-age=${24 * 3600 * 30}`;
+        document.cookie = `username=zs;max-age=0`;
+        document.cookie = `username=zs;max-age=-1`;
+
+        // Domain域
+        document.cookie = 'username=zs;domain=www.hanmaweilai.com';
+
+        // path路径（同一路径）
+        document.cookie = 'username=zs;path=/course/list';
+
+    </script>
+</body>
+
+</html>

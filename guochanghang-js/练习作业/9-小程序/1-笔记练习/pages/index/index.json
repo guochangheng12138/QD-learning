@@ -1,0 +1,18 @@
+{
+  "usingComponents": {},
+
+  "navigationBarBackgroundColor": "#ff0000",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "汉码未来",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": true,
+  "disableScroll": false,
+
+
+
+
+
+  "backgroundColorBottom": "#ff0000",
+  "backgroundColor": "#ff0000"
+
+}

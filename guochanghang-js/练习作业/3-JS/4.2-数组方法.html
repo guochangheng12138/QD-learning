@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [33, 666, 99];
+        arr.push(54, 74, 53);
+        arr.pop();
+        arr.unshift(67, 19, 85);
+        arr.shift();
+        console.log(arr);
+        arr.splice(3, 0, 'x', 'y', 'z');
+        console.log(arr);
+        var arr1 = arr.slice(2, -1);
+        console.log(arr1);
+        var brr = arr.join('#');
+        console.log(brr);
+        var crr = brr.split('#')
+        console.log(crr);
+        var drr = arr.concat(brr, crr);
+        console.log(drr);
+        var frr = arr.indexOf(19);
+        console.log(frr);
+        var grr = arr.includes(19);
+        console.log(grr);
+
+
+        // var input;
+        // var srr = [];
+        // while (input != -1) {
+        //     input = prompt('请输入字符');
+        //     srr.push(input);
+        // }
+        // srr.splice(0, 2, 'hello');
+        // srr.length -= 1;
+        // document.write(srr);
+
+
+
+
+    </script>
+</body>
+
+</html>

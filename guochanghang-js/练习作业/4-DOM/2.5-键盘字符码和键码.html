@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="field1">
+    <h1 id='info1'></h1>
+    <input type="text" id="field2">
+    <h1 id='info2'></h1>
+    <script>
+        var ofield1 = document.getElementById('field1');
+        var oinfo1 = document.getElementById('info1');
+        var ofield2 = document.getElementById('field2');
+        var oinfo2 = document.getElementById('info2');
+        ofield1.onkeypress = function (e) {
+            oinfo1.innerHTML = '您输入的字符码是' + e.charCode;
+        }
+        ofield2.onkeydown = function (e) {
+            oinfo2.innerHTML = '您输入的键码是' + e.keyCode;
+        }
+    </script>
+
+
+    <!-- 控制界面盒子移动 -->
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            border: solid 3px;
+            position: absolute;
+        }
+    </style>
+    <div id='box'></div>
+    <script>
+        var obox = document.getElementById('box');
+        var t = 200;
+        var l = 200;
+        document.onkeydown = function (e) {
+            if (e.keyCode == 37) {
+                l -= 3;
+            }
+            else if (e.keyCode == 38) {
+                t -= 3;
+            }
+            else if (e.keyCode == 39) {
+                l += 3;
+            }
+            else if (e.keyCode == 40) {
+                t += 3;
+            }
+            obox.style.left = l + 'px';
+            obox.style.top = t + 'px';
+        }
+
+        // 方法二
+        // switch (e.keyCode) {
+        //     case 37:
+        //         l -= 3;
+        //         break;
+        //     case 38:
+        //         t -= 3;
+        //         break;
+        //     case 39:
+        //         l += 3;
+        //         break;
+        //     case 40:
+        //         t += 3;
+        //         break;
+        // }
+    </script>
+</body>
+
+</html>

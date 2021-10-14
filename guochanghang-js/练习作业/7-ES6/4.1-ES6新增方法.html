@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 判断
+        console.log('abc'.includes('a'));
+        console.log('abc'.includes('ab'));
+        console.log('abc'.includes('ac'));
+
+
+        console.log('abc'.includes('a', 0));
+        console.log('abc'.includes('a', 1));
+
+
+        let ass = 'http://';
+        const addurl = (ass, n, v) => {
+            ass += ass.includes('?') ? '&' : '?';
+            ass += `${n}=${v}`;
+            return ass;
+        };
+        ass1 = addurl(ass, 'id', '100')
+        console.log(ass1);
+        ass2 = addurl(ass1, 'password', 'admin');
+        console.log(ass2);
+
+
+
+        // 补充长度
+        console.log('x'.padStart(5, 'ab'));
+        console.log('x'.padEnd(5, 'ab'));
+        console.log('x'.padEnd(4, 'ab'));
+
+
+        console.log('x'.padEnd(4));   //空格补全
+
+        const m = new Map([
+            ['apple', '10'],
+            ['strawberry', '5'],
+            ['banana', '0']
+        ])
+        console.log(m);
+        for (const item of m) {
+            item[0] = item[0].padStart(10, '-');
+            console.log(item[0]);
+            // console.log(typeof item[0]);
+        }
+
+
+        // 去除空格
+        const s = ' a b c ';
+        console.log(s);
+        console.log(s.trimStart());
+        console.log(s.trimLeft());
+        console.log(s.trimEnd());
+        console.log(s.trimRight());
+        console.log(s.trim());
+    </script>
+
+
+    <input type="text" id='username'>
+    <input type="submit" value="提交" id="btn">
+    <script>
+        const username = document.getElementById('username');
+        const btn = document.getElementById('btn');
+        btn.onclick = () => {
+            console.log(username.value);
+            if (username.value.trim() !== '') {
+                console.log('可以添加')
+            }
+            else {
+                console.log('不行')
+            }
+        }
+    </script>
+
+    <!-- 数组 -->
+    <script>
+        console.log([1, 2, 3].includes('2'));
+        console.log([1, 2, 3].includes(2));
+
+        console.log([1, 2, 3].includes(2, 2)); //搜素索引起始位置
+
+        console.log(NaN === NaN);
+        console.log([1, 2, NaN].includes(NaN))
+
+        // 去重
+        const arr = [];
+        for (const it of [1, 3, 9]) {
+            if (!arr.includes(it)) {
+                arr.push(it);
+            }
+        }
+        console.log(arr)
+
+        // 其他数据转化数组
+        console.log(Array.from('str'));
+
+        console.log(Array.from(new Set([1, 2, 1])));
+        console.log(...new Set([1, 2, 1]));
+        console.log([...new Set([1, 2, 1])]);
+
+        const obj = {
+            name: 'alex',
+            age: 3,
+            length: 5
+        }
+        console.log(obj)
+        console.log(Array.from(obj));
+
+
+
+        console.log(
+            [1, 2].map(value => {
+                return value * 2;
+            })
+        );
+        console.log(Array.from('12', value => value * 2));
+        console.log(Array.from('12').map(value => value * 2));
+
+        // 重置作用域对象
+        Array.from('12', function () {
+            console.log(this);
+        }, document)
+    </script>
+
+
+    <!-- find -->
+    <script>
+        console.log('555555555555555555555555555555555555555');
+
+
+
+        // console.log(
+        //     [1, 5, 10, 15].find(
+        //         (value, index, arr) => {
+        //             console.log(value, index, arr);
+        //             console.log(this);
+        //             return value > 9;
+        //         }, document
+        //     )
+        // )
+        console.log(
+            [1, 5, 10, 15].find(
+                (value) => {
+                    console.log(value);
+                    return value > 9;
+                }, document
+            )
+        )
+
+
+        // console.log(
+        //     [1, 5, 10, 15].find(function (value, index, arr) {
+        //         console.log(value, index, arr);
+        //         // console.log(this);
+        //         return value > 9;
+        //     }, document
+        //     )
+        // )
+
+        // console.log(
+        //     [1, 5, 10, 15].findIndex(
+        //         (value, index, arr) => {
+        //             // (value) => {
+        //             // console.log(value, index, arr);
+        //             // console.log(this);
+        //             return value > 9;
+        //         }, document
+        //     )
+        // )
+    </script>
+
+    <!-- 练习 -->
+    <script>
+        let data = [
+            {
+                age: 17,
+                name: 'tom'
+            },
+            {
+                age: 20,
+                name: 'alex'
+            }
+        ];
+        console.log(data.find(value => value.age == 20))
+        let sts = data.findIndex(value => value.name == 'tom');
+        console.log(sts);
+        data[sts].hobby = '游泳';
+        console.log(data)
+    </script>
+
+</body>
+
+</html>

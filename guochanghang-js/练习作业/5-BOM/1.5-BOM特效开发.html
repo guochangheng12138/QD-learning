@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            height: 5000px;
+            background-image: linear-gradient(to bottom, blue, green, yellow);
+        }
+
+        .backtotop {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.6);
+            position: fixed;
+            bottom: 100px;
+            right: 100px;
+            cursor: pointer;
+        }
+    </style>
+    <div class="backtotop" id="backtotop">返回顶部</div>
+    <script>
+        var backtotop = document.getElementById('backtotop');
+        var timer;
+        backtotop.onclick = function () {
+            clearInterval;
+            timer = setInterval(function () {
+                document.documentElement.scrollTop -= 20;
+                if (document.documentElement.scrollTop <= 0) {
+                    clearInterval(timer);
+                }
+            }, 20)
+        }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 400px;
+            height: 400px;
+            margin: 60px auto;
+            border: 4px solid red;
+        }
+
+        ul {
+            padding-top: 10px;
+        }
+
+        li {
+            padding-top: 10px;
+        }
+
+        #para {
+            width: 80px;
+            height: 80px;
+            background-color: orange;
+        }
+    </style>
+    <div id="box">
+        <ul>
+            <li>
+                <p id="para"></p>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var para = document.getElementById("para");
+        console.log(para.offsetTop)
+    </script>
+</body>
+
+</html>

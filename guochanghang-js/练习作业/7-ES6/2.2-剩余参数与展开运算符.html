@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const add = (x, y, ...args) => {
+        //     console.log(x, y, args);
+        // }
+        // add();
+        // add(1);
+        // add(1, 2);
+        // add(1, 2, 3, 4, 5);
+    </script>
+
+    <script>
+        // const add = (...args) => {
+        //     console.log(args);
+        // };
+        // add();
+        // add(3, 4);
+
+        // const bdd = (...qitas) => {
+        //     console.log(qitas);
+        // };
+        // bdd();
+        // bdd(3, 4);
+    </script>
+
+
+    <!-- 练习 -->
+    <script>
+        const pjs = (a1, a2, ...pj) => {
+            let sum = 0;
+            for (let i = 0; i < pj.length; i++) {
+                sum += pj[i];
+            }
+            let res = sum / (pj.length);
+            console.log(res);
+        }
+        pjs(8, 2, 4, 7, 8);
+    </script>
+
+
+    <!-- 剩余参数应用 -->
+    <!-- 完成add -->
+    <script>
+        const add = (...pjs) => {
+            let sum = 0;
+            for (let i = 0; i < pjs.length; i++) {
+                sum += pjs[i];
+            }
+            let res = sum / (pjs.length);
+            console.log(res);
+        }
+        add(8, 2, 4, 7, 8);
+    </script>
+    <!-- 解构赋值 -->
+    <script>
+        const [num, ...args] = [1, 2, 3, 4];
+        console.log(num, args)
+
+        const func = ([num1, ...args1]) => { console.log(num1, args1) };
+        func([1, 2, 3]);
+
+        const { x, y, ...z } = { a: 3, x: 1, y: 2, b: 4 };
+        console.log(x, y, z);
+
+        const funx = ({ x, y, ...z }) => { console.log(x, y, z) };
+        funx({ a: 3, x: 1, y: 2, b: 4 });
+    </script>
+
+
+
+
+</body>
+
+</html>

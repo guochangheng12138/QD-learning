@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>请输入用户名</p>
+        <input type="text" id="shuru">
+        <div id="yanzheng">待验证</div>
+    </div>
+
+    <script>
+        var yanzheng = document.getElementById('yanzheng');
+        var shuru = document.getElementById('shuru');
+        shuru.oninput = function () {
+            yanzheng.innerHTML = '输入中.....';
+        }
+        var reg = /^(?=.*_)(?=.*\d)(?=.*[a-zA-Z]).{6,18}$/;
+        shuru.onblur = function () {
+            var str = shuru.value;
+            if (reg.test(str)) {
+                yanzheng.innerHTML = '用户名输入正确';
+            } else {
+                yanzheng.innerHTML = '用户名不符合要求';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

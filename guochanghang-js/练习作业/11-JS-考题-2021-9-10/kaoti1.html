@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox" name="area" value="山东">山东
+        <input type="checkbox" name="area" value="河南">河南
+        <input type="checkbox" name="area" value="宁夏">宁夏
+        <input type="checkbox" name="area" value="山西">山西
+        <input type="checkbox" name="area" value="河北">河北
+    </div>
+    <input type="button" value="反选" id="f55" />
+
+    <script>
+        window.onload = function () {
+            var fanxuan = document.getElementById("f55");
+            fanxuan.onclick = function () {
+                var areas = document.getElementsByName("area");
+                console.log(areas);
+                for (var i = 0; i < areas.length; i++) {
+                    areas[i].checked = !areas[i].checked;
+                }
+            };
+        }
+    </script>
+</body>
+
+</html>

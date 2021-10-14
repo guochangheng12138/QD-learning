@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- box-sizing: border-box -->
+    <div class="da">
+        <div class="f55">1</div>
+        <div class="f55">2</div>
+        <div class="f55">3</div>
+        <div class="f55">4</div>
+    </div>
+    <style>
+        .da {
+            width: 500px;
+            height: 200px;
+            border: solid 5px green;
+        }
+
+        .f55 {
+            float: left;
+            width: 25%;
+            height: 200px;
+            border: solid;
+            box-sizing: border-box;
+            padding: 50px;
+        }
+    </style>
+
+
+    <!-- 不用promis，异步加载图片 -->
+    <div>
+        <img src="练习作业/1-HTML/4.1-插入图片/2.jpg" alt="" id="img">
+    </div>
+
+    <script>
+        const imgDom = document.getElementById('img');
+        setTimeout(() => {
+            imgDom.src = '练习作业/1-HTML/4.1-插入图片/3.jpg'
+        }, 5000)
+
+    </script>
+
+    <!-- <script>
+        let pm = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                console.log("异步")
+                resolve();
+            }, 2000);
+        });
+        console.log("go on");
+        pm.then(function () {
+            console.log("异步完成");
+        });
+    </script> -->
+
+    <script>
+        let timeout = function (time) {
+            return new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    resolve();
+                }, time);
+            });
+        }
+        console.log("go on");
+        timeout(2000).then(function () {
+            console.log("first");
+            return timeout(2000);
+        }).then(function () {
+            console.log("second");
+            return timeout(2000);
+        }).then(function () {
+            console.log("third");
+            return timeout(2000);
+        }).then(function () {
+            console.log("fourth");
+            return timeout(2000);
+        });
+    </script>
+</body>
+
+</html>

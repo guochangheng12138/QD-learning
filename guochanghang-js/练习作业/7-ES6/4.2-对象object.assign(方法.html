@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const apple = {
+            color: '红色',
+            shape: '原型',
+            taste: '甜'
+        }
+        const pen = {
+            color: '黑色',
+            shape: '圆柱形',
+            use: '写'
+        }
+        console.log(Object.assign(apple, pen));
+        console.log(Object.assign(apple, pen) === apple);
+        console.log(Object.assign({}, apple, pen));
+
+
+
+
+        console.log(Object.assign({}, undefined));
+        console.log(Object.assign({}, null));
+        console.log(Object.assign({}, 1));
+        console.log(Object.assign({}, true));
+        console.log(Object.assign({}, 'str'));
+
+
+        // 合并默认参数
+        const log = user => {
+            const def = {
+                name: 'tom',
+                age: 0,
+                sex: 'male'
+            };
+            const op = Object.assign({}, def, user);
+            console.log(op);
+        }
+        log();
+        log({});
+        log({ name: 'alex' });
+
+
+        const person = {
+            name: 'marry',
+            age: 18
+        }
+
+        // 返回键值对
+        console.log(Object.keys(person));
+        console.log(Object.values(person));
+        console.log(Object.entries(person));
+
+        console.log([1, 2].keys());
+        console.log([1, 2].values());
+        console.log([1, 2].entries());
+
+
+        // for of 循环遍历
+        for (const key of Object.keys(person)) {
+            console.log(key);
+        }
+        for (const value of Object.values(person)) {
+            console.log(value);
+        }
+        for (const entry of Object.entries(person)) {
+            console.log(entry);
+        }
+        for (const [key, value] of Object.entries(person)) {
+            console.log(key, value);
+        }
+    </script>
+
+
+    <!-- // 练习 -->
+    <div id="list">
+        <!-- <dl>
+            <dt>前端</dt>
+            <dd>vue</dd>
+            <dd>vue</dd>
+            <dd>vue</dd>
+        </dl> -->
+    </div>
+    <script>
+        var cl = {
+            '前端': ['vue', 'aug', 'rea'],
+            '后端': ['php', 'java', 'python']
+        }
+        var htm = ``;
+        var list = document.getElementById('list');
+
+        for (const entry of Object.entries(cl)) {
+            var arr = entry;
+            // console.log(arr);
+            htm += `<dt>${arr[0]}</dt><dd>${arr[1][0]}</dd><dd>${arr[1][1]}</dd><dd>${arr[1][2]}</dd>`;
+        }
+        list.innerHTML = htm;
+
+
+    </script>
+
+</body>
+
+</html>

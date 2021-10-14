@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<body>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            border: solid;
+        }
+    </style>
+
+    <div id="box"></div>
+    <button id="btn">点击抛送盒子</button>
+
+    <script>
+        var box = document.getElementById("box");
+        var btn = document.getElementById('btn');
+        var arr = [
+            { width: 300 },
+            { height: 300 },
+            { bgcolor: "red" }];
+
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const url1 = 'http://webapi.hanmaweilai.com/api/v1/postData';
+            const url2 = 'http://webapi.hanmaweilai.com/api/v1/getData';
+            $.ajax({
+                async: false,
+                url: url1,
+                type: "POST",
+                data: { idx: arr },
+                success: function (data) {
+                    console.log(data);
+                    var brr = data.data.idx;
+                    console.log(brr);
+                    var box1 = Number(brr[0].width)
+                    var box2 = Number(brr[1].height)
+                    var box3 = brr[2].bgcolor;
+
+                    box.style.width = box1 + "px";
+                    box.style.height = box2 + "px";
+                    box.style.backgroundColor = box3;
+                },
+                error: function () {
+                    console.log('error')
+                }
+            })
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<view>
+  <view wx:for="{{tabs}}" wx:key="type" data-type="{{item.type}}" bindtap="changeType">
+    {{item.name}}
+    <view hidden="{{type !==item.type}}"></view>
+  </view>
+</view>
+<block wx:if="{{type==='recommend'}}">
+  111111
+</block>
+<block wx:if="{{type==='path'}}">
+ 2222
+</block>
+<block wx:if="{{type==='project'}}">
+  33333
+</block>
+<block wx:if="{{type==='activity'}}">
+44444
+</block>

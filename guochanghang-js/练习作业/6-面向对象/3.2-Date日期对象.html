@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var dd = new Date();
+        console.log(dd);
+        console.log(typeof dd);
+        console.log(typeof dd);
+        console.log(dd.getDate());
+        console.log(dd.getSeconds());
+
+
+
+        // 时间戳
+        var f1 = dd.getTime();
+        console.log(f1)
+        var f2 = Date.parse(dd);
+        console.log(f2)
+        // console.log(f2.getFullYear());
+    </script>
+
+    <!-- 倒计时 -->
+    <h1>2022年高考倒计时</h1>
+    <h2 id="info"></h2>
+    <script>
+        var info = document.getElementById("info");
+        setInterval(function () {
+            var nd = new Date();
+            var td = new Date(2022, 5, 7);
+            var diff = td - nd;
+            var days = parseInt(diff / (1000 * 60 * 60 * 24));
+            var hours = parseInt(diff % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+            var miu = parseInt(diff % (1000 * 60 * 60) / (1000 * 60));
+            var sic = parseInt(diff % (1000 * 60 * 60) % (1000 * 60) / 1000);
+            info.innerHTML = days + '天' + hours + "小时" + miu + '分' + sic + '秒';
+        }, 1000)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <style>
+            /* 标签选择器 */
+            li {
+                color: rgb(23, 209, 100);
+                list-style: none;
+            }
+
+            span {
+                font-size: large;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            /* id选择器 */
+            #f12138 {
+                color: rgb(45, 20, 155);
+
+            }
+        </style>
+        <span>不负韶华</span>
+        <a href="wwww.baidu.com">baidu</a>
+        <ul>
+            <li>wang</li>
+            <li>wang</li>
+            <li id="f12138">wang</li>
+        </ul>
+    </div>
+    <!-- class标签 -->
+    <div>
+        <style>
+            .fs18 {
+                font-size: 18px;
+                color: forestgreen;
+            }
+        </style>
+        <p>我是一个p标签，我的字体是14px</p>
+        <p class="fs18 color-green">我是一个p标签，我的字体是18px</p>
+        <p>我是一个p标签，我的字体是14px</p>
+        <p>我是一个p标签，我的字体是14px</p>
+        <p>我是一个p标签，我的字体是14px</p>
+        <p class="fs18">我是一个p标签，我的字体是14px</p>
+    </div>
+    <!-- 复合选择器 -->
+    <div>
+        <style>
+            .x12138 ul li p {
+                color: fuchsia
+            }
+        </style>
+        <div class="x12138">
+            <ul>
+                <li>
+                    <p>盒子中的段落</p>
+                </li>
+                <li>
+                    <p>盒子中的段落</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 多代后代选择器 -->
+    <div>
+        <style>
+            .g12138 ul li .k12138 em {
+                font-size: 55px;
+            }
+        </style>
+        <div class="g12138">
+            <ul>
+                <li>
+                    <p class="k12138">我是段落<em>强调文字</em></p>
+                    <p>我是段落<em>强调文字</em></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 交集选择器 -->
+    <div>
+        <style>
+            h3.specx {
+                font-size: 55px;
+            }
+        </style>
+        <div>
+            <h3 class="specx">交集选择器</h3>
+            <h3>交集选择器</h3>
+        </div>
+    </div>
+    <!-- 并集选择器 -->
+    <div>
+        <style>
+            h4,
+            .spec {
+                font-size: 55px;
+                color: rgb(134, 15, 124);
+            }
+        </style>
+        <div>
+            <h4 class="spec">并集选择器</h4>
+            <h4>并集选择器</h4>
+        </div>
+    </div>
+    <!-- 练习 -->
+    <div>
+        <style>
+            div {
+                color: rgb(15, 221, 77);
+            }
+
+            div span {
+                color: fuchsia;
+            }
+
+            p.fs {
+                font-size: 55px;
+            }
+        </style>
+        <div>
+            我是div
+            <p>我是div内部的p</p>
+            <p class="fs">我是div内部的p</p>
+            <p>我是</p>
+            <span>我是span</span>
+            <h3>我是h3</h3>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // outer: for (i = 2; i <= 100; i++) {
+        //     for (j = 2; j < i; j++) {
+        //         if (i % j == 0) {
+        //             continue outer;
+        //         }
+        //     }
+        //     console.log(i);
+        // }
+
+
+        // 鸡兔同笼
+        // for (a = 0; a <= 35; a++) {
+        //     if (a * 2 + (35 - a) * 4 == 94) {
+        //         console.log(a)
+        //     }
+        // }
+        // for (a = 0; a <= 35; a++) {
+        //     for (b = 0; b <= 35; b++) {
+        //         if (a * 2 + b * 4 == 94) {
+        //             console.log(a, b)
+        //         }
+        //     }
+
+        // }
+
+
+        // 分数
+        // for (i = 1; i <= 5; i++) {
+        //     document.write('游戏第' + i + '轮,得分:</br>');
+        //     for (j = 10; j <= 100; j += 10) {
+        //         document.write(j + "分 ");
+        //     }
+        //     document.write('<hr>')
+        // }
+
+
+        // 星号
+        // for (i = 1; i <= 9; i++) {
+        //     document.write('</br>')
+        //     for (j = 1; j <= i; j++) {
+        //         document.write('*')
+        //     }
+        // }
+
+        // 九九乘法表
+        // for (i = 1; i <= 9; i++) {
+        //     document.write('</br>')
+        //     for (j = 1; j <= i; j++) {
+        //         document.write(j + '*' + i + '=' + i * j + '&nbsp;&nbsp;&nbsp;&nbsp;')
+        //     }
+        // }
+        // 买日用品
+        // for (a = 0, i = 0; 5 * a <= 100; a++) {
+        //     for (b = 0; 2 * b <= 100; b++) {
+        //         for (c = 0; 10 * c <= 100; c++) {
+        //             if (5 * a + 2 * b + 10 * c == 100) {
+        //                 i++;
+        //                 console.log(a, b, c, i);
+        //             }
+        //         }
+        //     }
+        // }
+        // 定义三位数
+        for (a = 1; a <= 9; a++) {
+            for (b = 0; b <= 9; b++) {
+                for (c = 0; c <= 9; c++) {
+                    if (c > a && b > c && a + b + c == a * b * c) {
+                        console.log(a, b, c, a * 100 + b * 10 + c)
+                    }
+                }
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const username1 = `alex`;
+        const username2 = 'alex';
+        console.log(username1);
+        console.log(username2);
+        console.log(username1 === username2);
+
+
+        const person = {
+            username: "tom",
+            age: 18,
+            sex: "female"
+        }
+
+        const info = `我的名字是:${person.username},性别:${person.sex},今年${person.age}岁了`;
+        console.log(info);
+    </script>
+
+
+    <div id="div1"></div>
+    <script>
+        // let pepole = {
+        //     name: 'xm',
+        //     age: 26,
+        // }
+        // let dv1 = document.getElementById('div1');
+        // dv1.innerHTML = `他是${pepole.name},年满${pepole.age}岁。`
+
+        const ss = `第一行
+                第二行`
+        console.log(ss)
+
+        // 转义字符
+        const st = `\`\\`
+        console.log(st)
+
+
+        const username = `alex`;
+        const pepole = {
+            age: 26,
+            sex: "female"
+        }
+        const getsex = function (i) {
+            return i === 'male' ? '男' : '女';
+        }
+        const tex = `${username},${pepole.age + 2},${getsex(pepole.sex)}`;
+        console.log(tex)
+
+
+
+    </script>
+</body>
+
+</html>

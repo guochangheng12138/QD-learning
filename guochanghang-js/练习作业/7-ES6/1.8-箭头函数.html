@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 普通函数改写
+        function cdd() { };
+        const cdd = function () { };
+        const cdd = () => { };
+
+
+
+        const add = (x, y) => {
+            return x + y;
+        }
+        console.log(add(5, 6))
+        // 单行函数体可以进一步简写
+        const add = (x, y) => x + y;
+
+
+        // 单行对象
+        const ddd = (x, y) => {
+            return {
+                value: x + y    //无分号
+            };
+        }
+        // 单行对象，在{}加（）,然后去掉return
+        const ddd = (x, y) => ({
+            value: x + y
+        })
+
+
+        // 数组
+        const tdd = (x, y) => [x, y];
+        console.log(tdd(2, 3))
+
+
+
+        // ES5匿名函数
+
+        document.body.onclick = function () { }  //事件监听：
+
+        setTimeout(function () { }, 1000);  //回调函数：
+
+        var foo = { init: function () { } };  //对象的方法：
+
+        var hub = function () { }  //变量声明：
+
+
+        //ES6的箭头函数表达方式
+
+        document.body.onclick = () => { }  //事件监听: 
+
+        setTimeout(() => { }, 1000);  //回调函数：
+
+        var foo = { init: () => { } }; foo.init()  //对象的方法：
+
+        var hub = () => { };  //变量声明：
+
+    </script>
+</body>
+
+</html>

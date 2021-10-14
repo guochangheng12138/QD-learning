@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 批量添加事件监听 -->
+    <!-- <ul id="list">
+        <li>列表</li>
+        <li>列表</li>
+        <li>列表</li>
+        <li>列表</li>
+        <li>列表</li>
+        <li>列表</li>
+    </ul>
+    <script>
+        var olist = document.getElementById('list');
+        var lis = document.getElementsByTagName('li');
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].onclick = function () {
+                this.style.color = 'red';
+            }
+        } -->
+    </script>
+
+
+    <!-- 新增元素动态绑定 -->
+    <!-- <button id="btn">点我添加li列表项</button>
+    <ul id="list"></ul>
+    <script>
+        var btn = document.getElementById('btn');
+        var list = document.getElementById('list');
+        var lis = document.getElementsByTagName('li');
+        btn.onclick = function () {
+            var oli = document.createElement('li');
+            oli.innerHTML = "我是新来的";
+            list.appendChild(oli);
+            oli.onclick = function () {
+                this.style.color = 'red';
+            }
+        }
+    </script> -->
+
+    <!-- 事件委托 -->
+    <!-- <button id="btn">点我添加li列表项</button>
+    <ul id="list"></ul>
+    <script>
+        var list = document.getElementById('list');
+        var btn = document.getElementById('btn');
+
+        list.onclick = function (e) {
+            e.target.style.color = 'red'
+        }
+        btn.onclick = function () {
+            var oli = document.createElement('li');
+            oli.innerHTML = "我是新来的";
+            list.appendChild(oli);
+        }
+    </script> -->
+
+    <!-- 委托冒泡与不冒泡 -->
+    <button id="btn">点我添加li列表项</button>
+    <ul id="list"></ul>
+    <script>
+        var list = document.getElementById('list');
+        var btn = document.getElementById('btn');
+
+        // 冒泡
+        // list.onmouseover = function (e) {
+        //     e.target.style.color = 'red';
+        // }
+        // 不冒泡
+        list.onmouseenter = function (e) {
+            e.target.style.color = 'red';
+        }
+
+        btn.onclick = function () {
+            var oli = document.createElement('li');
+            oli.innerHTML = "我是新来的";
+            list.appendChild(oli);
+        }
+    </script>
+</body>
+
+</html>

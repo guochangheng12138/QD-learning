@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function People(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.sayhello = function () {
+                console.log('我是' + this.name + '，我' + this.age + '岁了，我是' + this.sex + "性。")
+            }
+        }
+        var xiaoming = new People('小明', 12, '男');
+        var xiaohong = new People('小红', 10, "女");
+        var xiaogang = new People('小刚', 13, "男");
+        xiaoming.sayhello();
+        console.log(xiaoming.age);
+        xiaohong.sayhello();
+        xiaogang.sayhello();
+
+    </script>
+</body>
+
+</html>

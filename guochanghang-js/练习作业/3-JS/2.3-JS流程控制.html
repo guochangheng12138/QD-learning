@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var fenshu = Number(prompt('请输入成绩'));
+        // if (fenshu > 90) {
+        //     alert('优秀');
+        // }
+        // else if (fenshu > 70) {
+        //     alert('良好');
+        // }
+        // else if (fenshu > 60) {
+        //     alert('及格');
+        // }
+        // else {
+        //     alert('不及格');
+        // }
+
+
+        var sjh = prompt('请输入手机号');
+        if (sjh.length == 11) {
+            if (isNaN(sjh) == false) {
+                alert('号码输入正确')
+            }
+            else {
+                alert('请不要输入数字以外的字符')
+            }
+        }
+        else {
+            alert('请检查号码是否为11位')
+        };
+
+    </script>
+</body>
+
+</html>

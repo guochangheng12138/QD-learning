@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+    <input type="text" bindinput="handleInputChange" placeholder="AngularJS MySQL Java" value="{{inputs}}" />
+    <icon wx:if="{{showIcon}}" type="search" id="f1" />
+    <icon wx:if="{{showtext}}" type="cancel" id="f2" bindtap="handleTapChange2" />
+  </view>
+
+  <!-- 提示内容 -->
+  <view class="pjt" wx:if="{{showtext}}">
+    <view class="pjt-title">实战推荐</view>
+    <!-- 输入内容 -->
+    <!-- {{text}} -->
+
+    <!-- 检索不到时 -->
+    <view class="pjt-empty" hidden="{{!(searchList && searchList.length==0)}}">
+      无搜索结果
+    </view>
+
+    <!-- 检索到时 -->
+    <!-- 只显示检索内容标题 -->
+    <!-- <view class="pjt-item" wx:for="{{searchList ? searchList : courses}}" wx:key='*this'>
+      {{item.title}}
+      <view class="pjt-item2">{{item.level}}</view>
+    </view> -->
+
+    <!-- 检索内容标题检索关键字标红 -->
+    <view class="pjt-item" wx:for="{{brrList}}" wx:for-index='idx' wx:key='*this'>
+      <view class="pjt-item3">{{item}}</view>
+      <view class="pjt-item4">{{text}}</view>
+      <view class="pjt-item5" wx:for="{{crrList}}" wx:key='*this'>
+        <view wx:if="{{index==idx}}" class="pjt-item6">{{item}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 顶部tab -->
+  <view class="navigator">
+    <view class="navigator-item" wx:for="{{tabs}}" wx:key="type" data-type="{{item.type}}" bindtap="changeType">
+      <image class="navigator-img" src="../../resources/{{item.type}}.png"></image>
+      {{item.name}}
+      <view hidden="{{type !==item.type}}" class="navigator-active navigator-active-{{item.type}}"></view>
+    </view>
+  </view>
+
+  <!-- 轮播图 -->
+  <swiper previous-margin="28rpx" next-margin="28rpx" circular="{{true}}" autoplay="{{true}}" interval="2000"
+    indicator-dots="{{true}}" class="swiper" bindchange="handleChange">
+    <swiper-item wx:for="{{swiperList}}" wx:key="*this" class="swiper-item">
+      <image class="swiper-image {{currentIndex!==index?'teshu':''}}" src="{{item.imgUrl}}" />
+    </swiper-item>
+  </swiper>
+
+  <!-- tab内容 -->
+  <!-- 推荐导入 -->
+  <include src="./recommend.wxml"></include>
+  <!-- 路径导入 -->
+  <include src="./path.wxml"></include>
+  <!-- 实战导入 -->
+  <include src="./project.wxml"></include>
+  <!-- 活动导入 -->
+  <include src="./activity.wxml"></include>
+</view>

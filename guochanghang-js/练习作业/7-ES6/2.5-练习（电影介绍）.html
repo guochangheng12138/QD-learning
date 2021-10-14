@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #f1 {
+            font-size: 50px;
+        }
+
+        .wk {
+            border: solid;
+            width: 400px;
+        }
+
+        #btn {
+            margin: 30px;
+            margin-bottom: 30px;
+        }
+    </style>
+
+    <input type="button" value="添加" id="btn">
+    <div class="wk">
+        <div id="f1"></div><br>
+        <div id="f2"></div><br>
+        <div id="f3"></div><br>
+        <div id="f4"></div><br>
+        <div id="f5"></div><br>
+        <div id="f6"></div>
+    </div>
+
+    <script>
+        var btn = document.getElementById('btn');
+        var f1 = document.getElementById('f1');
+        var f2 = document.getElementById('f2');
+        var f3 = document.getElementById('f3');
+        var f4 = document.getElementById('f4');
+        var f5 = document.getElementById('f5');
+        var f6 = document.getElementById('f6');
+
+        const loguser = userparam => {
+            const defparam = {
+                name: '大话西游',
+                dy: '刘镇伟',
+                zy: '吴孟达',
+                lx: '周星驰',
+                sysj: 2014,
+                jj: '孙悟空护送唐三藏。。。。。。'
+            };
+            const param = { ...defparam, ...userparam };
+            f1.innerHTML = `名称: ${param.name}`;
+            f2.innerHTML = `导演: ${param.dy}`;
+            f3.innerHTML = `主演: ${param.zy}`;
+            f4.innerHTML = `类型: ${param.lx}`;
+            f5.innerHTML = `上映时间: ${param.sysj}`;
+            f6.innerHTML = `简介: ${param.jj}`;
+        }
+        loguser();
+
+        btn.onclick = function () {
+            loguser({
+                name: '功夫',
+                dy: '周星驰',
+                zy: '黄圣依',
+                lx: '周星驰',
+                sysj: 2004,
+                jj: '20世纪40年代。。。。。。。'
+            })
+        }
+    </script>
+</body>
+
+</html>

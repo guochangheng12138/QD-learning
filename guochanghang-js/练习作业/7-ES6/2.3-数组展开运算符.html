@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(Math.min([3, 1, 2]));
+        console.log(Math.min(3, 1, 2));
+        console.log(Math.min(...[3, 1, 2]));
+    </script>
+
+    <script>
+        // <!-- 复制数组 -->
+        const a = [1, 2];
+        const c = [...a];
+        a[0] = 3;
+        console.log(a);
+        console.log(c);
+
+        // 合并数组
+        const b = [3];
+        const d = [4, 5];
+        console.log(...a, ...b, ...d)
+
+        // 字符串转化数组
+        console.log(...'alex');
+        console.log('a', 'l', 'e', 'x');
+        console.log([...'alex']);
+        console.log('alex'.split(''));
+
+    </script>
+
+    <!-- // 类数组转化数组 -->
+    <script>
+        function func() {
+            // console.log(arguments.push);
+            console.log(...arguments);
+        }
+        func(1, 2)
+    </script>
+
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <script>
+        console.log(document.querySelectorAll('p'));
+        console.log([...document.querySelectorAll('p')].push);
+    </script>
+
+
+    <!-- 练习 -->
+    <script>
+        let arr = [33, 5, 8, 6, 3665, 47, 2, 82];
+        console.log(Math.min(...arr));
+        console.log(Math.max(...arr));
+    </script>
+</body>
+
+</html>

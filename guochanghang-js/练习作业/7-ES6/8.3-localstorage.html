@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+        localStorage.setItem('username', 'zs');
+        localStorage.setItem('age', 18);
+
+        console.log(localStorage.length);
+
+        console.log(localStorage.getItem('username'));
+        console.log(localStorage.getItem('age'));
+        console.log(localStorage.getItem('sex'));
+
+        localStorage.removeItem('color');
+
+        // localStorage.clear();
+    </script> -->
+</body>
+
+
+<!-- // 自动填充登录名称 -->
+<form action="https://www.baidu.com" method="post" id="login">
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <input type="submit" id="btn" value="登录">
+
+</form>
+<script>
+    const loginForm = document.getElementById('login');
+    const btn = document.getElementById('btn');
+
+    const username = localStorage.getItem('username');
+    if (username) {
+        loginForm.username.value = username;
+    }
+    btn.addEventListener('click', e => {
+        e.preventDefault;
+        console.log(loginForm.username.value);
+        localStorage.setItem('username', loginForm.username.value)
+        loginForm.submit()
+    }, false)
+</script>
+
+</html>

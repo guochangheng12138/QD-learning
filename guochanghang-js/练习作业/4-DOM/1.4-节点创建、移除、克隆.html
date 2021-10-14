@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div id="box">
+        <p>我是原本的段落0</p>
+        <p>我是原本的段落1</p>
+        <p>我是原本的段落2</p>
+    </div>
+    <script>
+        var obox = document.getElementById('box');
+        var ops = document.getElementsByTagName('p');
+        var op = document.createElement('p');
+        op.innerText = '我是新来的';
+        // obox.appendChild(op);
+        obox.insertBefore(op, ops[1]);
+    </script> -->
+
+
+
+    <!-- 创建表格 -->
+    <!-- <style>
+        td {
+            width: 20px;
+            height: 20px;
+            border: 1px solid red;
+        }
+    </style>
+    <table id="mytb">
+
+    </table>
+    <script>
+        var mytb = document.getElementById('mytb');
+        for (i = 1; i <= 20; i++) {
+            var tr = document.createElement('tr');
+            for (j = 1; j <= 12; j++) {
+                var td = document.createElement('td');
+                tr.appendChild(td)
+            }
+            mytb.appendChild(tr)
+        }
+    </script> -->
+
+
+
+
+    <!-- 克隆节点 -->
+    <div id="box1">
+        <ul>
+            <li>牛奶</li>
+            <li>咖啡</li>
+            <li>可乐</li>
+        </ul>
+    </div>
+    <div id="box2"></div>
+    <script>
+        var box1 = document.getElementById(box1);
+        var box2 = document.getElementById(box2);
+        var theul = box1.getElementsByTagName('ul')[0];
+
+        var new_ul = theul.cloneNode(true);
+        box2.appendChild(new_ul);
+    </script>
+
+</body>
+
+</html>

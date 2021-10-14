@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+
+    </style>
+    <div>
+        <form action="">
+            <div>
+                <p>用户名：</p>
+                <input type="text" placeholder="用户名设置后不可更改" id="xmk">
+                <div id="xmkts">5</div>
+            </div>
+            <div></div>
+            <div></div>
+        </form>
+    </div>
+    <script>
+        var xmk = document.getElementById('xmk');
+        var xmkts = document.getElementById('xmkts');
+        var reg1 = /^[a-zA-Z]\w{5,29}$/;
+        // console.log(/^[a-zA-Z]\w{5,29}$/.test('a123456'))
+        xmk.onblur = function () {
+            var sst = xmk.value;
+            if (reg1.test(sst)) {
+                xmkts.innerHTML = '用户名输入正确';
+                xmk.style.color = 'green';
+            }
+            else {
+                xmkts.innerHTML = '6-30位字母、数字或"_"';
+                xmk.style.color = 'red';
+
+            }
+        }
+    </script>
+</body>
+
+</html>
